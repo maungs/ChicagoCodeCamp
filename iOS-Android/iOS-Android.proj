@@ -64,10 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\backgrounds\backgroundBlank.png" />
-    <Content Include="images\backgrounds\backgroundCCC.png" />
+    <Content Include="images\backgrounds\backgroundLeft.png" />
+    <Content Include="images\backgrounds\backgroundRight.png" />
     <Content Include="images\mainpage\icon_CCC.png" />
     <Content Include="images\mainpage\icon_Map.png" />
-    <Content Include="images\mainpage\icon_presenter.png" />
+    <Content Include="images\mainpage\icon_Presenter.png" />
     <Content Include="images\mainpage\icon_Schedule.png" />
     <Content Include="images\mainpage\icon_Sessions.png" />
     <Content Include="images\mainpage\icon_Sponsors.png" />

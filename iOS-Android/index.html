@@ -6,31 +6,35 @@
         <script src="cordova.js"></script>
         <script src="kendo/js/jquery.min.js"></script>
         <script src="kendo/js/kendo.mobile.min.js"></script>
-        <link href="styles/appStyle.css" rel="stylesheet"/>
         <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-        <link href="styles/main.css" rel="stylesheet" />
+        <link href="styles/appStyle.css" rel="stylesheet"/>
     </head>
     <body onload="onBodyLoad()">
-        <div data-role="view" data-layout="layout" id="LandingPageView" data-transition="slide" data-stretch="true">
+        <div data-role="view" data-layout="layout" id="LandingPageView" data-transition="slide" data-stretch="true" data-show="onLoadLandingPage">
             <div class="content">
-                <div class="fullScreenCCC"> 
-                    <br>
-                    <div onclick="gotoSchedule();" id="cccSchedule" class="twoby" style="background:url(/images/mainpage/icon_schedule.png);">
+                <div class="fullScreenLeft"> 
+                    <div onclick="gotoSchedule();" id="cccSchedule" class="twoby">
+                        <img src="images/mainpage/icon_Schedule.png" style="margin-left:10px;"/>
                         <div class="frontMenu"><center>Schedule</center></div>
                     </div>
-                    <div onclick="gotoSessions();" id="cccSessions" class="twoby" style="background:url(/images/mainpage/icon_sessions.png);">
+                    <div onclick="gotoSessions();" id="cccSessions" class="twoby">
+                        <img src="images/mainpage/icon_Sessions.png" style="margin-left:10px;"/>
                         <div class="frontMenu"><center>Sessions</center></div>
                     </div><br>
-                    <div onclick="gotoPresenters();" id="cccSpeakers" class="twoby" style="background:url(/images/mainpage/icon_presenter.png);">
+                    <div onclick="gotoPresenters();" id="cccSpeakers" class="twoby">
+                        <img src="images/mainpage/icon_Presenter.png" style="margin-left:10px;"/>
                         <div class="frontMenu"><center>Presenters</center></div>
                     </div>
-                    <div onclick="gotoSponsors();" id="cccSponsors" class="twoby" style="background:url(/images/mainpage/icon_sponsors.png);">
+                    <div onclick="gotoSponsors();" id="cccSponsors" class="twoby">
+                        <img src="images/mainpage/icon_Sponsors.png" style="margin-left:10px;"/>
                         <div class="frontMenu"><center>Sponsors</center></div>
                     </div><br>
-                    <div onclick="gotoAbout();" id="cccAbout" class="twoby" style="background:url(/images/mainpage/icon_ccc.png);">
+                    <div onclick="gotoAbout();" id="cccAbout" class="twoby">
+                        <img src="images/mainpage/icon_CCC.png" style="margin-left:10px;"/>
                         <div class="frontMenu"><center>About</center></div>
                     </div>
-                    <div onclick="gotoLocations();" id="cccLocation" class="twoby" style="background:url(/images/mainpage/icon_map.png);">
+                    <div onclick="gotoLocations();" id="cccLocation" class="twoby">
+                        <img src="images/mainpage/icon_Map.png" style="margin-left:10px;"/>
                         <div class="frontMenu"><center>Location</center></div>
                     </div>
                 </div>
@@ -45,8 +49,14 @@
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenBlank">
-                   
+                <div class="fullScreenRight">
+                   <select>
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="opel">Opel</option>
+                      <option value="audi">Audi</option>
+                    </select>
+  
                 </div>
             </div>
         </div>
@@ -59,8 +69,8 @@
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenBlank">
-                   
+                <div class="fullScreenRight">
+                   a
                 </div>
             </div>
         </div>
@@ -73,7 +83,7 @@
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenBlank">
+                <div class="fullScreenRight">
                    
                 </div>
             </div>
@@ -87,7 +97,7 @@
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenBlank">
+                <div class="fullScreenRight">
                    
                 </div>
             </div>
@@ -101,7 +111,7 @@
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenBlank">
+                <div class="fullScreenRight">
                    
                 </div>
             </div>
@@ -115,7 +125,7 @@
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenBlank">
+                <div class="fullScreenRight">
                    
                 </div>
             </div>
