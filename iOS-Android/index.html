@@ -85,14 +85,13 @@
             <div class="content">
                 <div class="fullScreenRight">
                     <ul  data-role="listview">
-                        <div data-bind="template: {name: 'presenterTemplate', foreach: Presenters}"></div>
+                        <div id="PresentersList" data-bind="template: {name: 'presenterTemplate', foreach: Presenters}"></div>
     					<script id="presenterTemplate" type="text/html">
                             <li>
                                 <div  class="pContainer">
                                     <div class="pProfileImg" data-bind="style:{backgroundImage: 'url(AvatarURL)' }" ></div>
                                     <div class="pName" data-bind="text: FirstName+' '+LastName"></div>
                                     <div class="pContent" data-bind="text: Twitter"></div>
-                                    <p data-bind="text: AvatarURL"></p>
                                 </div>
                             </li>
                         </script>
@@ -111,7 +110,7 @@
             <div class="content">
                 <div class="fullScreenRight">
                     <ul  data-role="listview">
-                    <div data-bind="template: {name: 'sponsorsTemplate', foreach: Sponsors}"></div>
+                    <div id="SponsorsList" data-bind="template: {name: 'sponsorsTemplate', foreach: Sponsors}"></div>
     					<script id="sponsorsTemplate" type="text/html">
     
     							<li>

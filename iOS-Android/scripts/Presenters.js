@@ -25,6 +25,6 @@ function PresentersLoaded( result){
 				Presenters: ko.observableArray(jPresenters)
             };
 		
-		ko.applyBindings(PresentersModel);
+		ko.applyBindings(PresentersModel, document.getElementById('PresentersList'));
     }
 }

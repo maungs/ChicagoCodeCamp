@@ -28,7 +28,7 @@ function SponsorsLoaded( result){
 				Sponsors: ko.observableArray(jSponsors)
             };
 		
-		ko.applyBindings(SponsorsModel);
+		ko.applyBindings(SponsorsModel, document.getElementById('SponsorsList'));
     }
 }
 
