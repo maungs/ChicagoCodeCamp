@@ -89,6 +89,8 @@
       <TargetName>cordova.js</TargetName>
     </Content>
     <Content Include="scripts\appCode.js" />
+    <Content Include="scripts\knockout.js" />
+    <Content Include="scripts\SponsorshipLevels.js" />
     <Content Include="styles\appStyle.css" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />

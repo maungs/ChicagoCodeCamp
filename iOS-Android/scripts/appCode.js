@@ -1,3 +1,4 @@
+ var xmlhttp;
 function onBodyLoad(){
   document.addEventListener("deviceready", onDeviceReady, false);
   initializeItems();
@@ -18,6 +19,15 @@ function onLoadLandingPage(){
   var imgClass = (this.width/this.height > 1) ? 'wide' : 'tall';
   $(this).addClass(imgClass);
  });
+    
+	if (window.XMLHttpRequest)
+	  {// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	  }
+	else
+	  {// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  }
 }
 
 function gotoSchedule(){

@@ -89,7 +89,7 @@
             </div>
         </div>
 <!--SPONSORS-->
-        <div data-role="view" data-layout="layout" id="SponsorsPage" data-transition="slide" data-stretch="true" >
+        <div data-role="view" data-layout="layout" id="SponsorsPage" data-transition="slide" data-show="onSponsorsPage">
             <header data-role="header">
                 <div data-role="navbar">
                     <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
@@ -98,7 +98,20 @@
             </header>
             <div class="content">
                 <div class="fullScreenRight">
-                   
+                    <ul  data-role="listview">
+                    <div data-bind="template: {name: 'sponsorshiplevelTemplate', foreach: Sponsors}"></div>
+    					<script id="sponsorshiplevelTemplate" type="text/html">
+    
+    							<li>
+    								<div data-bind="style:{'backgroundColor':ThemeColor}" style="Height:30px; text-align:center; padding-top:10px;"><h3 data-bind="text: Name"></h3></div>
+    								<ul id="salesDept" data-bind="foreach: sponsors">
+    									<li >
+    			                        <Image data-bind="attr:{src: LogoLink}" width="320" height"240" style="padding-bottom:5px;"></Image>
+    									</li>
+    								</ul>
+    							</li>
+    					</script>
+					</ul>
                 </div>
             </div>
         </div>
@@ -136,4 +149,6 @@
             //var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mobile-tabstrip" });
         </script>
     </body>
+    <script src="scripts/Sponsors.js"></script>
+    <script src="scripts/knockout.js"></script>
 </html>
