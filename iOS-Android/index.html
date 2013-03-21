@@ -75,7 +75,7 @@
             </div>
         </div>
 <!--SPEAKERS-->
-        <div data-role="view" data-layout="layout" id="PresentersPage" data-transition="slide" data-stretch="true" >
+        <div data-role="view" data-layout="layout" id="PresentersPage" data-transition="slide" data-show="onPresentersPage" >
             <header data-role="header">
                 <div data-role="navbar">
                     <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
@@ -84,7 +84,19 @@
             </header>
             <div class="content">
                 <div class="fullScreenRight">
-                   
+                    <ul  data-role="listview">
+                        <div data-bind="template: {name: 'presenterTemplate', foreach: Presenters}"></div>
+    					<script id="presenterTemplate" type="text/html">
+                            <li>
+                                <div  class="pContainer">
+                                    <div class="pProfileImg" data-bind="style:{backgroundImage: 'url(AvatarURL)' }" ></div>
+                                    <div class="pName" data-bind="text: FirstName+' '+LastName"></div>
+                                    <div class="pContent" data-bind="text: Twitter"></div>
+                                    <p data-bind="text: AvatarURL"></p>
+                                </div>
+                            </li>
+                        </script>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -99,12 +111,12 @@
             <div class="content">
                 <div class="fullScreenRight">
                     <ul  data-role="listview">
-                    <div data-bind="template: {name: 'sponsorshiplevelTemplate', foreach: Sponsors}"></div>
-    					<script id="sponsorshiplevelTemplate" type="text/html">
+                    <div data-bind="template: {name: 'sponsorsTemplate', foreach: Sponsors}"></div>
+    					<script id="sponsorsTemplate" type="text/html">
     
     							<li>
     								<div data-bind="style:{'backgroundColor':ThemeColor}" style="Height:30px; text-align:center; padding-top:10px;"><h3 data-bind="text: Name"></h3></div>
-    								<ul id="salesDept" data-bind="foreach: sponsors">
+    								<ul data-bind="foreach: sponsors">
     									<li >
     			                        <Image data-bind="attr:{src: LogoLink}" width="320" height"240" style="padding-bottom:5px;"></Image>
     									</li>
@@ -149,6 +161,8 @@
             //var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mobile-tabstrip" });
         </script>
     </body>
-    <script src="scripts/Sponsors.js"></script>
     <script src="scripts/knockout.js"></script>
+    <script src="scripts/Presenters.js"></script>
+    <script src="scripts/Sponsors.js"></script>
+    <link href="styles/Profile.css" rel="stylesheet"/>
 </html>
