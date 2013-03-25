@@ -4,15 +4,7 @@ var SponsorsModel;
 
 function onSponsorsPage(){
     
-    
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	else
-	  {// code for IE6, IE5
-	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	  }
+    app.showLoading();
     LoadSponsors(5);
 }
 function LoadSponsors(EventId){
@@ -30,5 +22,6 @@ function SponsorsLoaded( result){
 		
 		ko.applyBindings(SponsorsModel, document.getElementById('SponsorsList'));
     }
+    app.hideLoading();
 }
 

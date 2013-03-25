@@ -45,32 +45,43 @@
             <header data-role="header">
                 <div data-role="navbar">
                     <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                    <select id='sEventSchedule' data-align="left" class="sEvent" data-bind="options: Events, optionsText: 'Name', optionsValue: 'Id', value: selectedId" onchange="eventChanged(this)"></select>
                     Schedule
                 </div>
             </header>
             <div class="content">
                 <div class="fullScreenRight">
-                   <select>
-                      <option value="volvo">Volvo</option>
-                      <option value="saab">Saab</option>
-                      <option value="opel">Opel</option>
-                      <option value="audi">Audi</option>
-                    </select>
-  
+                    
+                    
                 </div>
             </div>
         </div>
 <!--SESSIONS-->
-        <div data-role="view" data-layout="layout" id="SessionsPage" data-transition="slide" data-stretch="true" >
+        <div data-role="view" data-layout="layout" id="SessionsPage" data-transition="slide" data-show="onSessionsPage">
             <header data-role="header">
                 <div data-role="navbar">
                     <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
-                    Sessions
+                    <select id='sEventSessions' class="sEvent" data-align="right" data-bind="options: Events, optionsText: 'Name', optionsValue: 'Id', value: selectedId" onchange="eventChanged(this)"></select>
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenRight">
-                   a
+                <div  class="fullScreenRight">
+                    <ul  data-role="listview">
+                        <div id="SessionsList" data-bind="template: {name: 'SessionsTemplate', foreach: Sessions}"></div>
+    					<script id="SessionsTemplate" type="text/html">
+                            <li>
+                                <div  class="sContainer">
+                                    <div>
+                                        <div class="sTitle" data-bind="text: Title"></div>
+                                        <div class="AbstractBrief" data-bind="text: Abstract"></div> 
+                                         <div class="sExtra" data-bind="text: 'Level: '+Level"></div>
+                                         <div class="sExtra" data-bind="text: 'Keywords: '+keywords">
+                                         </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </script>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -88,7 +99,7 @@
                         <div id="PresentersList" data-bind="template: {name: 'presenterTemplate', foreach: Presenters}"></div>
     					<script id="presenterTemplate" type="text/html">
                             <li>
-                                <div  class="pContainer">
+                                <div  class="pContainer"  style="Background: #fff;">
                                     <div class="pProfileImg" data-bind="style:{backgroundImage: 'url('+AvatarURL+')' }" ></div>
                                     <div class="pName" data-bind="text: FirstName+' '+LastName"></div>
                                     <div class="pContent" data-bind="text: Twitter"></div>
@@ -108,16 +119,15 @@
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenRight">
+                <div class="fullScreenRight" style="Background: #fff;">
                     <ul  data-role="listview">
                     <div id="SponsorsList" data-bind="template: {name: 'sponsorsTemplate', foreach: Sponsors}"></div>
     					<script id="sponsorsTemplate" type="text/html">
-    
     							<li>
     								<div data-bind="style:{'backgroundColor':ThemeColor}" style="Height:30px; text-align:center; padding-top:10px;"><h3 data-bind="text: Name"></h3></div>
     								<ul data-bind="foreach: sponsors">
     									<li >
-    			                        <Image data-bind="attr:{src: LogoLink}" width="320" height"240" style="padding-bottom:5px;"></Image>
+    			                        <Image data-bind="attr:{src: LogoLink}" width="310" height"240" style="padding-bottom:2.5px; padding-top:2.5px; padding-left:5px; padding-right:5px;"></Image>
     									</li>
     								</ul>
     							</li>
@@ -157,11 +167,13 @@
         <script src="scripts/appCode.js"></script>
         <script>
             new kendo.mobile.Application($(document.body), { initial: "LandingPageView"});
-            //var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mobile-tabstrip" });
         </script>
     </body>
     <script src="scripts/knockout.js"></script>
     <script src="scripts/Presenters.js"></script>
     <script src="scripts/Sponsors.js"></script>
+    <script src="scripts/Sessions.js"></script>
+    <script src="scripts/Events.js"></script>
     <link href="styles/Profile.css" rel="stylesheet"/>
+    <link href="styles/Sessions.css" rel="stylesheet"/>
 </html>

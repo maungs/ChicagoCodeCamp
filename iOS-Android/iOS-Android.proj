@@ -94,11 +94,14 @@
       <TargetName>cordova.js</TargetName>
     </Content>
     <Content Include="scripts\appCode.js" />
+    <Content Include="scripts\Events.js" />
     <Content Include="scripts\knockout.js" />
     <Content Include="scripts\Presenters.js" />
+    <Content Include="scripts\Sessions.js" />
     <Content Include="scripts\Sponsors.js" />
     <Content Include="styles\appStyle.css" />
     <Content Include="styles\Profile.css" />
+    <Content Include="styles\Sessions.css" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>

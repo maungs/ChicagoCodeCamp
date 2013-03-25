@@ -1,4 +1,5 @@
- var xmlhttp;
+var xmlhttp;
+var app = new kendo.mobile.Application(document.body);
 function onBodyLoad(){
   document.addEventListener("deviceready", onDeviceReady, false);
   initializeItems();
@@ -10,17 +11,7 @@ function onDeviceReady() {
 }
 
 function initializeItems(){
-
-    
-}
-
-function onLoadLandingPage(){
-    $('.twoby').find('img').each(function(){
-  var imgClass = (this.width/this.height > 1) ? 'wide' : 'tall';
-  $(this).addClass(imgClass);
- });
-    
-	if (window.XMLHttpRequest)
+    if (window.XMLHttpRequest)
 	  {// code for IE7+, Firefox, Chrome, Opera, Safari
 	  xmlhttp=new XMLHttpRequest();
 	  }
@@ -28,6 +19,15 @@ function onLoadLandingPage(){
 	  {// code for IE6, IE5
 	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	  }
+    onEventsPage();
+      
+}
+
+function onLoadLandingPage(){
+    $('.twoby').find('img').each(function(){
+      var imgClass = (this.width/this.height > 1) ? 'wide' : 'tall';
+      $(this).addClass(imgClass);
+     });
 }
 
 function gotoSchedule(){
