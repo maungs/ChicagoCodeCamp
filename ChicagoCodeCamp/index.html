@@ -59,13 +59,11 @@
             </header>
             <div class="content">
                 <div class="fullScreenRight">
-                  
-                    <tbody id="TracksList" data-bind="foreach: TracksList">
-                        <tr>
-                            <td data-bind="text: TrackTitle"></td>
-                            <td data-bind="text: TrackTitle"></td>
-                        </tr>
-                    </tbody>
+                    <div id="scrollview-container">
+                        <div data-role="scrollview" data-page="2" id="TracksList">
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -1,6 +1,5 @@
 
 var jTracks;
-var TracksModel;
 
 function onTracksPage(){
     LoadTracks(EventId);
@@ -44,9 +43,11 @@ function LoadTracksFromStorage()
 }
 function BindTracks(jsonArray)
 {
-    TracksModel = {
-				Tracks: ko.observableArray(jsonArray)
-            };
-		
-	ko.applyBindings(TracksModel, document.getElementById('TracksList'));
+	var txt="";
+    
+    for(i = 0; i<jsonArray.length; i++)
+    {
+        txt+="<div class='Track' data-role='page'><div class='pName'>"+jsonArray[i].TrackTitle.toString()+"</div></div>";
+    }
+    document.getElementById("TracksList").innerHTML=txt;
 }
