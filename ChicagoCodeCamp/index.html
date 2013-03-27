@@ -59,13 +59,13 @@
             </header>
             <div class="content">
                 <div class="fullScreenRight">
-                    <div id="scrollview-container">
-                            <div data-role="scrollview" data-page="2" id="TracksList" data-bind="template: {name: 'tracksTemplate', foreach: TracksList}"></div>
-        					<script id="tracksTemplate" type="text/html">
-                                <div class="Track photo1" data-role="page">
-                                    <div class="pName" data-bind="text: TrackTitle"></div></div>
-                            </script>
-                    </div>
+                  
+                    <tbody id="TracksList" data-bind="foreach: TracksList">
+                        <tr>
+                            <td data-bind="text: TrackTitle"></td>
+                            <td data-bind="text: TrackTitle"></td>
+                        </tr>
+                    </tbody>
                 </div>
             </div>
         </div>
@@ -116,7 +116,7 @@
                                     <div class="pProfileImg" data-bind="style:{backgroundImage: 'url('+AvatarURL+')' }" ></div>
                                     <div class="pName" data-bind="text: FirstName+' '+LastName"></div>
 									<!-- ko if: Twitter -->
-									<div style="Height: 30px;"><div class="pTwitter" data-bind="text: Twitter"></div><Image width="25" height="25" src="images/TwitterHome.png" style="position: absolute; margin-top: -34px; margin-left:104px;"><Image></div>
+									<div style="Height: 30px;"><div class="pTwitter" data-bind="text: Twitter"></div><Image width="25" height="25" src="images/TwitterHome.png" style="position: absolute; margin-top: -28px; margin-left:104px;"><Image></div>
 									<!-- /ko -->
 									<!-- ko if: Website -->
                                     <div class="pWebsite" data-bind="text: Website"></div>
