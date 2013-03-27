@@ -1,4 +1,5 @@
 var xmlhttp;
+var storage;
 var app = new kendo.mobile.Application(document.body);
 function onBodyLoad(){
   document.addEventListener("deviceready", onDeviceReady, false);
@@ -7,7 +8,6 @@ function onBodyLoad(){
 
 function onDeviceReady() {
   //navigator.geolocation.getCurrentPosition(onGPSSuccess, onGPSError);
-
 }
 
 function initializeItems(){
@@ -19,8 +19,8 @@ function initializeItems(){
 	  {// code for IE6, IE5
 	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	  }
+    storage = window.localStorage;
     onEventsPage();
-      
 }
 
 function onLoadLandingPage(){

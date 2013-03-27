@@ -7,7 +7,8 @@ body {background: #F1F1F1;}
 .fullScreenRight {position:absolute; width:100%; height:100%; background-image:url('../images/backgrounds/backgroundRight.png');background-repeat:no-repeat;background-position:left bottom;}
 
 .twoby {width:40%; margin:5%; height:105px; float:left; background-size: 100%; display:table;}
-#LandingPageView .frontMenu { color:#000;}
+#LandingPageView .frontMenu { color:#000; margin-top: -10px; margin-bottom: -10px;}
+.sEventSchedule{display: none;}
 
 .twoby img.wide {
     max-width: 100%;
@@ -48,3 +49,18 @@ body {background: #F1F1F1;}
 .km-android .km-view .km-navbar  {
     height:0;
 }
+
+#SchedulePage .photo {
+	margin: 0;
+	height: 400px;
+	display: inline-block;
+	-webkit-background-size: auto 100%;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background: #800000;
+}
+#SchedulePage .photo1 {background: #800000;}
+#SchedulePage .photo2 {background: #FFF;}
+#SchedulePage .photo3 {background: #000;}
+#SchedulePage .photo4 {background: #800000;}

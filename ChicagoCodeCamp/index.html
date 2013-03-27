@@ -13,6 +13,15 @@
         <div data-role="view" data-layout="layout" id="LandingPageView" data-transition="slide" data-stretch="true" data-show="onLoadLandingPage">
             <div class="content">
                 <div class="fullScreenLeft"> 
+                    <center>
+                        <div style="width: 100%; height: 35px; margin-top: 10px; ">
+                            <center>
+                                <select id='sEventSchedule' class="sEventSchedule" data-align="left" 
+                                    data-bind="options: Events, optionsText: 'Name', optionsValue: 'Id', value: selectedId" 
+                                    onchange="eventChanged(this)"></select>
+                            </center>
+                        </div>
+                    </center> 
                     <div onclick="gotoSchedule();" id="cccSchedule" class="twoby">
                         <img src="images/mainpage/icon_Schedule.png" style="margin-left:10px;"/>
                         <div class="frontMenu"><center>Schedule</center></div>
@@ -41,18 +50,46 @@
             </div>
         </div>
 <!--SCHEDULE-->
-        <div data-role="view" data-layout="layout" id="SchedulePage" data-transition="slide" data-stretch="true" >
+        <div data-role="view" data-layout="layout" id="SchedulePage" data-transition="slide" data-show="onSchedulePage" >
             <header data-role="header">
                 <div data-role="navbar">
                     <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
-                    <select id='sEventSchedule' data-align="left" class="sEvent" data-bind="options: Events, optionsText: 'Name', optionsValue: 'Id', value: selectedId" onchange="eventChanged(this)"></select>
                     Schedule
                 </div>
             </header>
             <div class="content">
                 <div class="fullScreenRight">
-                    
-                    
+                    <div id="scrollview-container">
+                        <div data-role="scrollview" data-page="2">
+                            <div id="Track" class="photo photo1" data-role="page">
+                            Track 1
+                            </div>
+                            <div id="Track" class="photo photo2" data-role="page">
+                            Track 2
+                            </div>
+                            <div id="Track" class="photo photo3" data-role="page">
+                                Track 3
+                            </div>
+                            <div id="Track" class="photo photo4" data-role="page">
+                                Track 4
+                            </div>
+                            <div id="Track" class="photo photo5" data-role="page">
+                                Track 5
+                            </div>
+                            <div id="Track" class="photo photo6" data-role="page">
+                                Track 6
+                            </div>
+                            <div id="Track" class="photo photo7" data-role="page">
+                                Track 7
+                            </div>
+                            <div id="Track" class="photo photo8" data-role="page">
+                                Track 8
+                            </div>
+                            <div id="Track" class="photo photo9" data-role="page">
+                                Track 9
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,7 +98,7 @@
             <header data-role="header">
                 <div data-role="navbar">
                     <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
-                    <select id='sEventSessions' class="sEvent" data-align="right" data-bind="options: Events, optionsText: 'Name', optionsValue: 'Id', value: selectedId" onchange="eventChanged(this)"></select>
+                    Sessions
                 </div>
             </header>
             <div class="content">
@@ -160,7 +197,10 @@
             </header>
             <div class="content">
                 <div class="fullScreenRight">
-                   
+                 <p>19351 W Washington Street<br/>Grayslake, IL 60030</p>
+                    <iframe width="100%" height="320" frameborder="0" scrolling="no" marginheight="0"
+                        marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=19351+W+Washington+Street+Grayslake,+IL.+60030&amp;aq=&amp;sll=39.739318,-89.266507&amp;sspn=11.246898,26.784668&amp;ie=UTF8&amp;hq=&amp;hnear=19351+W+Washington+St,+Grayslake,+Lake,+Illinois+60030&amp;t=m&amp;ll=42.36051,-88.010015&amp;spn=0.030443,0.054932&amp;z=14&amp;iwloc=A&amp;output=embed">
+                    </iframe>
                 </div>
             </div>
         </div>                        
@@ -174,6 +214,7 @@
     <script src="scripts/Sponsors.js"></script>
     <script src="scripts/Sessions.js"></script>
     <script src="scripts/Events.js"></script>
+    <script src="scripts/Schedules.js"></script>
     <link href="styles/Profile.css" rel="stylesheet"/>
     <link href="styles/Sessions.css" rel="stylesheet"/>
 </html>
