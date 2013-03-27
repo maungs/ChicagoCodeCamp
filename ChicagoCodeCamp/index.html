@@ -115,7 +115,12 @@
                                 <div  class="pContainer"  style="Background: #fff;">
                                     <div class="pProfileImg" data-bind="style:{backgroundImage: 'url('+AvatarURL+')' }" ></div>
                                     <div class="pName" data-bind="text: FirstName+' '+LastName"></div>
-                                    <div class="pContent" data-bind="text: Twitter"></div>
+									<!-- ko if: Twitter -->
+									<div style="Height: 30px;"><div class="pTwitter" data-bind="text: Twitter"></div><Image width="25" height="25" src="images/TwitterHome.png" style="position: absolute; margin-top: -34px; margin-left:104px;"><Image></div>
+									<!-- /ko -->
+									<!-- ko if: Website -->
+                                    <div class="pWebsite" data-bind="text: Website"></div>
+									<!-- /ko -->
                                 </div>
                             </li>
                         </script>
@@ -140,7 +145,7 @@
     								<div data-bind="style:{'backgroundColor':ThemeColor}" style="Height:30px; text-align:center; padding-top:10px;"><h3 data-bind="text: Name"></h3></div>
     								<ul data-bind="foreach: sponsors">
     									<li >
-    			                        <Image data-bind="attr:{src: LogoLink}" width="310" height"240" style="padding-bottom:2.5px; padding-top:2.5px; padding-left:5px; padding-right:5px;"></Image>
+    			                        <Image data-bind="attr:{src: LogoLink}" width="310" height="240" style="padding-bottom:2.5px; padding-top:2.5px; padding-left:5px; padding-right:5px;"></Image>
     									</li>
     								</ul>
     							</li>

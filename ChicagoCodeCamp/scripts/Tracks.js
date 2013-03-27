@@ -6,7 +6,6 @@ function onTracksPage(){
     LoadTracks(EventId);
 }
 function LoadTracks(Id){
-     alert('Hey');   
     app.showLoading();
     var today=new Date();
     var one_hour=1000*60*60;

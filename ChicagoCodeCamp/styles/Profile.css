@@ -32,12 +32,36 @@ text-overflow: ellipsis;
 }
 .pContent{
 margin-left: 105 px;
+height: 30px;
 font-size: 12pt;
 padding-top: 5px;
 padding-left: 24px;
 text-align: left;
 color: #80000;
 white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.pTwitter{
+margin-left: 105 px;
+height: 30px;
+font-size: 12pt;
+padding-top: 5px;
+padding-left: 34px;
+text-align: left;
+color: #80000;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.pWebsite{
+margin-left: 105 px;
+height: 60px;
+font-size: 9.5pt;
+padding-top: 5px;
+padding-left: 2px;
+text-align: left;
+color: #80000;
 overflow: hidden;
 text-overflow: ellipsis;
 }

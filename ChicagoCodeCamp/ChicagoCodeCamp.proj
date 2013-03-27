@@ -79,6 +79,7 @@
     <Content Include="images\mainpage\icon_Sessions.png" />
     <Content Include="images\mainpage\icon_Sponsors.png" />
     <Content Include="images\navbar\header.png" />
+    <Content Include="images\TwitterHome.png" />
     <Content Include="index.html" />
     <Content Include="kendo\js\jquery.min.js" />
     <Content Include="kendo\js\kendo.mobile.min.js" />
