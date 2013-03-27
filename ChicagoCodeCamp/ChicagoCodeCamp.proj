@@ -70,6 +70,7 @@
     <Content Include="images\backgrounds\backgroundBlank.png" />
     <Content Include="images\backgrounds\backgroundLeft.png" />
     <Content Include="images\backgrounds\backgroundRight.png" />
+    <Content Include="images\down_arrow.png" />
     <Content Include="images\headshot.png" />
     <Content Include="images\mainpage\icon_CCC.png" />
     <Content Include="images\mainpage\icon_Map.png" />

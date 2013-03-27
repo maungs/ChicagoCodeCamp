@@ -25,6 +25,21 @@ body {background: #F1F1F1;}
 .km-ios .km-view .km-content {color:#000; background-color: #F1F1F1;}
 .km-ios .km-view .km-navbar {background: url(../images/navbar/header.png);height:42px ;-webkit-box-shadow: -1px 2px 4px 1px #575757;} /*NOTICE THE SHADOW EFFECT   Left ,Top ,Blur Dist, Spread Dist */ 
 
+/* --- SELECT BOX --- */
+select {
+    background: transparent;
+    border: 1px solid #800000;
+    border-radius: 5px;
+    color: #800000;
+    width: 240px;
+    height:30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 2px 2px 10px;
+    background: transparent url("../images/down_arrow.png") no-repeat 210px center;
+}
+
 
 /* -- KENDO BUTTON OVERRIDE -- */
 
