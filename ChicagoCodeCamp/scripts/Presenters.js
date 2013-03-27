@@ -13,7 +13,7 @@ function LoadPresenters(Id){
         var PresentersLast = PresentersLastPulled==null? today.getTime(): parseInt(PresentersLastPulled);
         var now = today.getTime();
         var hoursPassed = (now-PresentersLast) / one_hour;
-        if ((hoursPassed >= 12) || (hoursPassed ==0)) { 
+        if ((hoursPassed >= 24) || (hoursPassed ==0)) { 
             xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Presenters/" + Id,true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = PresentersLoaded;
