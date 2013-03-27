@@ -27,6 +27,7 @@ body {background: #F1F1F1;}
 
 
 /* -- KENDO BUTTON OVERRIDE -- */
+
 .km-ios .km-view .km-navbar .km-button.km-state-active .km-text {
      color:#FFF; 
 }
@@ -34,16 +35,16 @@ body {background: #F1F1F1;}
     color:#FFF; 
 }
 .km-ios .km-view .km-navbar .km-button {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #074779),color-stop(49%, #074779), color-stop(50%, #063559), color-stop(100%, #063559));
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b91a10),color-stop(49%, #a8190f), color-stop(50%, #a8190f), color-stop(100%, #8e1810)); border-top: 1px solid #581208; border-bottom: 1px solid #581208; border-left: 0px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5);;
 }
 .km-ios .km-view .km-navbar .km-button:before {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #074779),color-stop(49%, #074779), color-stop(50%, #063559), color-stop(100%, #063559));
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #074779),color-stop(49%, #074779), color-stop(50%, #063559), color-stop(100%, #063559)); border-top: 1px solid #581208; border-bottom: 1px solid #581208; border-left: 1px solid rgba(85, 15, 7, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5);;
 }
 .km-ios .km-view .km-navbar .km-button.km-state-active {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1663b2), color-stop(49%, #12579c), color-stop(50%, #0d3d6e), color-stop(100%, #0b345d));
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #800000), color-stop(49%, #800000), color-stop(50%, #800000), color-stop(100%, #800000));
 }
 .km-ios .km-view .km-navbar .km-button.km-state-active:before {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1663b2), color-stop(49%, #12579c), color-stop(50%, #0d3d6e), color-stop(100%, #0b345d));
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #800000), color-stop(49%, #800000), color-stop(50%, #800000), color-stop(100%, #800000));
 }
 
 .km-android .km-view .km-navbar  {

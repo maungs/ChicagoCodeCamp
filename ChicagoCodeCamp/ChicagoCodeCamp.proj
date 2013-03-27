@@ -12,8 +12,8 @@
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
     <BundleVersion>1.0</BundleVersion>
-    <iOSDisplayName />
-    <iOSDeviceFamily>1;2</iOSDeviceFamily>
+    <iOSDisplayName>Chicago Code Camp</iOSDisplayName>
+    <iOSDeviceFamily>1</iOSDeviceFamily>
     <AndroidVersionCode>1</AndroidVersionCode>
   </PropertyGroup>
   <ItemGroup>
