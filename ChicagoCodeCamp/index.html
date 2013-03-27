@@ -58,12 +58,30 @@
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenRight">
-                    <div id="scrollview-container">
-                        <div data-role="scrollview" data-page="2" id="TracksList">
-                        </div>
-                    </div>
-                    
+                <div class="fullScreenRight" style="Background: #fff;">
+                    <ul  data-role="listview">
+                    <div id="SchedulesList" data-bind="template: {name: 'schedulesTemplate', foreach: Schedules}"></div>
+    					<script id="schedulesTemplate" type="text/html">
+    							<li>
+                                    <div data-bind="text: Name +' @'+ StartsAt +'-'+ EndsAt +''" class ="schSession"></div>
+    								<ul data-bind="foreach: Sessions">
+    									<li >
+                                            <div class="schContainer"  style="Background: #fff;">
+                                            <div class="schName" data-bind="text: Title"></div>
+                                            <!-- ko if: SecondSpeaker -->
+                                            <div class="schContent" data-bind="text: '1st Speaker: '+Speaker"></div>
+                                            <div class="schContent" data-bind="text: '2nd Speaker: '+SecondSpeaker"></div>
+                                            <!-- /ko -->
+                                            <!-- ko if: !SecondSpeaker -->
+                                            <div class="schContent" data-bind="text: 'Speaker: '+Speaker"></div>
+                                            <!-- /ko -->
+                                            <div class="schContent" data-bind="text: Track +': '+TrackDescription"></div>
+                                            </div>
+    									</li>
+    								</ul>
+    							</li>
+    					</script>
+					</ul>
                 </div>
             </div>
         </div>
@@ -85,9 +103,9 @@
                                     <div>
                                         <div class="sTitle" data-bind="text: Title"></div>
                                         <div class="AbstractBrief" data-bind="text: Abstract"></div> 
-                                         <div class="sExtra" data-bind="text: 'Level: '+Level"></div>
-                                         <div class="sExtra" data-bind="text: 'Keywords: '+keywords">
-                                         </div>
+                                        <div class="sExtra" data-bind="text: 'Level: '+Level"></div>
+                                        <div class="sExtra" data-bind="text: 'Keywords: '+keywords">
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -189,7 +207,7 @@
         </script>
     </body>
     <script src="scripts/knockout.js"></script>
-    <script src="scripts/Tracks.js"></script>
+    <script src="scripts/Schedules.js"></script>
     <script src="scripts/Presenters.js"></script>
     <script src="scripts/Sponsors.js"></script>
     <script src="scripts/Sessions.js"></script>
@@ -197,4 +215,5 @@
     <script src="scripts/Schedules.js"></script>
     <link href="styles/Profile.css" rel="stylesheet"/>
     <link href="styles/Sessions.css" rel="stylesheet"/>
+    <link href="styles/Schedule.css" rel="stylesheet"/>
 </html>

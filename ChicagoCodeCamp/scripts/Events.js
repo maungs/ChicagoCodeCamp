@@ -1,6 +1,6 @@
 var jEvents;
 var EventsModel;
-var EventId;
+var EventId=5;
 
 function onEventsPage(){
     LoadEvents();
