@@ -7,7 +7,7 @@ margin-top: 10px; margin-bottom: 10px;position: relative;
 box-shadow: 3px 3px 2px rgba(0,0,0,.5);
 }
 .schSession{
-background-color: #7e8083;
+background-color: #800000;
 color: #fff;
 font-size: 12pt;
 text-align: center;
@@ -34,7 +34,7 @@ padding-top: 5px;
 padding-right: 24px;
 text-align: left;
 color: #FFF;
-background: #800000;
+background: #7e8083;
 white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
