@@ -10,11 +10,11 @@ function LoadSponsors(Id){
         app.showLoading();
         var today=new Date();
         var one_hour=1000*60*60;
-        var SponsorsLastPulled = storage.getItem("SponsorsLast");
+        var SponsorsLastPulled = storage["SponsorsLast"];
         var SponsorsLast = SponsorsLastPulled==null? today.getTime(): parseInt(SponsorsLastPulled);
         var now = today.getTime();
         var hoursPassed = (now-SponsorsLast) / one_hour;
-        if ((hoursPassed >= 12 || hoursPassed ==0)) { 
+        if ((hoursPassed >= 12) || (hoursPassed ==0)) { 
             xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sponsors/" + Id,true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = SponsorsLoaded;
@@ -30,15 +30,17 @@ function SponsorsLoaded( result){
     {
         jSponsors = jQuery.parseJSON(xmlhttp.responseText);
         BindEvents(jSponsors);
+		var today=new Date();
         var sponsorsList = xmlhttp.responseText;
-        storage.setItem("SponsorsList", sponsorsList);
-        storage.setItem("SponsorsLast", today.getTime().toString());
+        storage["SponsorsList"] =sponsorsList;
+        storage["SponsorsLast"]= today.getTime().toString();
     }
+    
     app.hideLoading();
 }
 function LoadSponsorsFromStorage()
 {
-       var sponsorsList = storage.SponsorsList;
+       var sponsorsList = storage["SponsorsList"];
        var jsonFeed = jQuery.parseJSON(sponsorsList);
        BindSponsors(jsonFeed);
        app.hideLoading();

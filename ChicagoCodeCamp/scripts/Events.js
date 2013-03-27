@@ -12,8 +12,13 @@ function LoadEvents(){
     
     var today=new Date();
 	var one_hour=1000*60*60;
-	var lastPulled = storage.getItem("EventsLastPulled");
-	var lastPulled = lastPulled==null? today.getTime(): parseInt(lastPulled);
+	var lastPulled = 0;
+	try {
+		lastPulled=storage["EventsLastPulled"];
+	} catch (e) {
+	 
+	}
+	lastPulled = lastPulled==null? today.getTime(): parseInt(lastPulled);
 	var now = today.getTime();
 	var hoursPassed = (now-lastPulled) / one_hour;
     if ((hoursPassed >= 12 || hoursPassed ==0)) { 
@@ -32,9 +37,10 @@ function EventsLoaded( result){
     {
         jEvents = jQuery.parseJSON(xmlhttp.responseText);
         BindEvents(jEvents);
+		var today=new Date();
         var eventsList = xmlhttp.responseText;
-        storage.setItem("eventsList", eventsList);
-        storage.setItem("EventsLastPulled", today.getTime().toString());
+        storage["eventsList"]=eventsList;
+        storage["EventsLastPulled"]=today.getTime().toString();
     }
     app.hideLoading();
 }
