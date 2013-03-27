@@ -1,0 +1,47 @@
+.sContainer{
+width:100% -30 px; border: 1px solid #800000;
+margin-left:10px; margin-right:10px;
+margin-top: 20px;position: relative;
+-moz-box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+-webkit-box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+}
+.sTitle {
+    height: 30px;
+    font-size: 15pt;
+    padding-top: 5px;
+    padding-left: 4px;
+    text-align: left;
+    color: #FFF;
+    background: #800000;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.Abstract {
+    white-space: pre-wrap;      /* CSS3 */   
+    white-space: -moz-pre-wrap; /* Firefox */    
+    white-space: -pre-wrap;     /* Opera <7 */   
+    white-space: -o-pre-wrap;   /* Opera 7 */    
+    word-wrap: break-word;      /* IE */
+}
+.AbstractBrief {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;      /* CSS3 */   
+    white-space: -moz-pre-wrap; /* Firefox */    
+    white-space: -pre-wrap;     /* Opera <7 */   
+    white-space: -o-pre-wrap;   /* Opera 7 */    
+    word-wrap: break-word;      /* IE */
+}
+.sExtra {
+    height: 30px;
+    
+    bottom: 0px;
+    padding-left: 12px;
+    padding-top: 2px;
+    font-size: larger;
+    white-space: nowrap;
+	overflow: hidden;
+}

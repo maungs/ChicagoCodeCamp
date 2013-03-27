@@ -1,0 +1,43 @@
+.pContainer{
+width:100% -30 px; height: 100px; border: 1px solid #800000;
+margin-left:10px; margin-right:10px;
+margin-top: 20px;position: relative;
+-moz-box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+-webkit-box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+}
+.pProfileImg{
+width:100px; height: 100px; border-right: 1px solid #800000; 
+position: relative; float: left;
+background-repeat:no-repeat;
+background-position:center;
+
+-webkit-background-size: cover; /*for webKit*/
+-moz-background-size: cover; /*Mozilla*/
+-o-background-size: cover; /*opera*/
+background-size: cover; /*generic*/
+}
+.pName{
+margin-left: 105 px;
+height: 30px;
+font-size: 12pt;
+padding-top: 5px;
+padding-right: 24px;
+text-align: left;
+color: #FFF;
+background: #800000;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.pContent{
+margin-left: 105 px;
+font-size: 12pt;
+padding-top: 5px;
+padding-left: 24px;
+text-align: left;
+color: #80000;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
