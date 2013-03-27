@@ -43,13 +43,15 @@ function EventsLoaded( result){
         storage["EventsLastPulled"]=today.getTime().toString();
     }
     app.hideLoading();
+    LoadTracks(EventId);
 }
 function LoadEventsFromStorage()
 {
-       var eventsList = storage.eventsList;
-       var jsonFeed = jQuery.parseJSON(eventsList);
-       BindEvents(jsonFeed);
-       app.hideLoading();
+    var eventsList = storage.eventsList;
+    var jsonFeed = jQuery.parseJSON(eventsList);
+    BindEvents(jsonFeed);
+    app.hideLoading();
+    LoadTracks(EventId);
 }
 function BindEvents(jsonArray)
 {

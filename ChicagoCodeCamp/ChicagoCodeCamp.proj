@@ -100,6 +100,8 @@
     <Content Include="scripts\Schedules.js" />
     <Content Include="scripts\Sessions.js" />
     <Content Include="scripts\Sponsors.js" />
+    <Content Include="scripts\Times.js" />
+    <Content Include="scripts\Tracks.js" />
     <Content Include="styles\appStyle.css" />
     <Content Include="styles\Profile.css" />
     <Content Include="styles\Sessions.css" />

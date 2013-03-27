@@ -3,7 +3,6 @@ var jSponsors;
 var SponsorsModel;
 
 function onSponsorsPage(){
-    storage = window.localStorage;
     LoadSponsors(EventId);
 }
 function LoadSponsors(Id){
@@ -21,7 +20,6 @@ function LoadSponsors(Id){
         }
         else
         {
-            alert('No-XHR');
             LoadSponsorsFromStorage();
         }
 }
@@ -29,7 +27,7 @@ function SponsorsLoaded( result){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
         jSponsors = jQuery.parseJSON(xmlhttp.responseText);
-        BindEvents(jSponsors);
+        BindSponsors(jSponsors);
 		var today=new Date();
         var sponsorsList = xmlhttp.responseText;
         storage["SponsorsList"] =sponsorsList;

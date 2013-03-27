@@ -60,35 +60,11 @@
             <div class="content">
                 <div class="fullScreenRight">
                     <div id="scrollview-container">
-                        <div data-role="scrollview" data-page="2">
-                            <div id="Track" class="photo photo1" data-role="page">
-                            Track 1
-                            </div>
-                            <div id="Track" class="photo photo2" data-role="page">
-                            Track 2
-                            </div>
-                            <div id="Track" class="photo photo3" data-role="page">
-                                Track 3
-                            </div>
-                            <div id="Track" class="photo photo4" data-role="page">
-                                Track 4
-                            </div>
-                            <div id="Track" class="photo photo5" data-role="page">
-                                Track 5
-                            </div>
-                            <div id="Track" class="photo photo6" data-role="page">
-                                Track 6
-                            </div>
-                            <div id="Track" class="photo photo7" data-role="page">
-                                Track 7
-                            </div>
-                            <div id="Track" class="photo photo8" data-role="page">
-                                Track 8
-                            </div>
-                            <div id="Track" class="photo photo9" data-role="page">
-                                Track 9
-                            </div>
-                        </div>
+                            <div data-role="scrollview" data-page="2" id="TracksList" data-bind="template: {name: 'tracksTemplate', foreach: TracksList}"></div>
+        					<script id="tracksTemplate" type="text/html">
+                                <div class="Track photo1" data-role="page">
+                                    <div class="pName" data-bind="text: TrackTitle"></div></div>
+                            </script>
                     </div>
                 </div>
             </div>
@@ -210,6 +186,7 @@
         </script>
     </body>
     <script src="scripts/knockout.js"></script>
+    <script src="scripts/Tracks.js"></script>
     <script src="scripts/Presenters.js"></script>
     <script src="scripts/Sponsors.js"></script>
     <script src="scripts/Sessions.js"></script>
