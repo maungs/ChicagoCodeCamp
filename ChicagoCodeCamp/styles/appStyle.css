@@ -27,8 +27,8 @@ body {background: #F1F1F1;}
 
 /* --- SELECT BOX --- */
 select {
-    background: transparent;
     border: 1px solid #800000;
+    background: #800000;
     border-radius: 5px;
     color: #800000;
     width: 240px;
@@ -65,18 +65,8 @@ select {
 .km-android .km-view .km-navbar  {
     height:0;
 }
-
-#SchedulePage .Track {
-	margin: 0;
-	height: 400px;
-	display: inline-block;
-	-webkit-background-size: auto 100%;
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background: #fff;
+.km-android .km-view .km-content {
+    background-color: rgb(255, 255, 255);
 }
-#SchedulePage .photo1 {background: #800000;}
-#SchedulePage .photo2 {background: #FFF;}
-#SchedulePage .photo3 {background: #000;}
-#SchedulePage .photo4 {background: #800000;}
+
+
