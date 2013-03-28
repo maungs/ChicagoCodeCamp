@@ -27,7 +27,7 @@ function PresentersLoaded( result){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
         jPresenters = jQuery.parseJSON(xmlhttp.responseText);
-        BindPresenters(jPresenters);
+        BindPresenters();
 		var today=new Date();
         var PresentersList = xmlhttp.responseText;
         storage["PresentersList"] =PresentersList;
@@ -38,19 +38,20 @@ function PresentersLoaded( result){
 function LoadPresentersFromStorage()
 {
        var PresentersList = storage["PresentersList"];
-       var jsonFeed = jQuery.parseJSON(PresentersList);
-       BindPresenters(jsonFeed);
+       jPresenters = jQuery.parseJSON(PresentersList);
+       BindPresenters();
        app.hideLoading();
 }
-function BindPresenters(jsonArray)
+function BindPresenters()
 {
     PresentersModel = {
-				Presenters: ko.observableArray(jsonArray),
+				Presenters: ko.observableArray(jPresenters),
                 PresenterSelected : PresenterSelect
             };
 		
 	ko.applyBindings(PresentersModel, document.getElementById('PresentersList'));
+    window.location.href="#PresentersPage";
 }
-function PresenterSelect(e) {
-    alert(e.FirstName + ' ' + e.LastName);
+function PresenterSelect(e) {    
+    window.location.href="#PresenterPage?"+e.Id;
 }

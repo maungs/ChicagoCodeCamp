@@ -49,6 +49,7 @@ function BindSchedules(jsonArray)
                 SchedulesSelected : ScheduleSelect
             };	
 	ko.applyBindings(SchedulesModel, document.getElementById('SchedulesList'));
+    window.location.href="#SchedulePage";
 }
 function ScheduleSelect(e) {
     alert(e.SubmissionId);

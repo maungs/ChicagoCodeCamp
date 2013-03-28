@@ -13,7 +13,7 @@ function LoadSponsors(Id){
         var SponsorsLast = SponsorsLastPulled==null? today.getTime(): parseInt(SponsorsLastPulled);
         var now = today.getTime();
         var hoursPassed = (now-SponsorsLast) / one_hour;
-        if ((hoursPassed >= 12) || (hoursPassed ==0)) { 
+        if ((hoursPassed >= 0) || (hoursPassed ==0)) { 
             xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sponsors/" + Id,true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = SponsorsLoaded;
@@ -27,7 +27,7 @@ function SponsorsLoaded( result){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
         jSponsors = jQuery.parseJSON(xmlhttp.responseText);
-        BindSponsors(jSponsors);
+        BindSponsors();
 		var today=new Date();
         var sponsorsList = xmlhttp.responseText;
         storage["SponsorsList"] =sponsorsList;
@@ -39,15 +39,16 @@ function SponsorsLoaded( result){
 function LoadSponsorsFromStorage()
 {
        var sponsorsList = storage["SponsorsList"];
-       var jsonFeed = jQuery.parseJSON(sponsorsList);
-       BindSponsors(jsonFeed);
+       jSponsors = jQuery.parseJSON(sponsorsList);
+       BindSponsors();
        app.hideLoading();
 }
-function BindSponsors(jsonArray)
+function BindSponsors()
 {
     SponsorsModel = {
-				Sponsors: ko.observableArray(jsonArray)
+				Sponsors: ko.observableArray(jSponsors)
             };
 		
 	ko.applyBindings(SponsorsModel, document.getElementById('SponsorsList'));
+    window.location.href="#SponsorsPage";
 }

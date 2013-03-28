@@ -6,6 +6,14 @@ margin-top: 20px;position: relative;
 -webkit-box-shadow: 3px 3px 2px rgba(0,0,0,.5);
 box-shadow: 3px 3px 2px rgba(0,0,0,.5);
 }
+.pContainerBig{
+width:98%; border: 1px solid #800000;
+margin-left:auto; margin-right:auto;
+margin-top: 20px;position: relative;
+-moz-box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+-webkit-box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+}
 .pProfileImg{
 width:100px; height: 100px; border-right: 1px solid #800000; 
 position: relative; float: left;
@@ -64,4 +72,41 @@ text-align: left;
 color: #000;
 overflow: hidden;
 text-overflow: ellipsis;
+}
+.pProfileImgB{
+width:120px; height: 120px; border-right: 1px solid #800000; 
+position: relative; float: left;
+background-repeat:no-repeat;
+background-position:center;
+
+-webkit-background-size: cover; /*for webKit*/
+-moz-background-size: cover; /*Mozilla*/
+-o-background-size: cover; /*opera*/
+background-size: cover; /*generic*/
+}
+.pContentB{
+margin-left: 125px;
+height: 30px;
+font-size: 12pt;
+padding-top: 5px;
+padding-left: 24px;
+text-align: left;
+color: #000;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.pWebsiteB{
+margin-left: 125px;
+height: 60px;
+font-size: 9.5pt;
+padding-top: 5px;
+padding-left: 2px;
+text-align: left;
+color: #000;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.displayTwitter{
+height:30px;
 }

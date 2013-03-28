@@ -1,10 +1,12 @@
 var xmlhttp;
 var storage;
 var app = new kendo.mobile.Application(document.body);
-function onBodyLoad(){
-  document.addEventListener("deviceready", onDeviceReady, false);
-  initializeItems();
-}  
+
+	$().ready(function () {
+  
+    initializeItems();
+		});
+
 
 function onDeviceReady() {
   //navigator.geolocation.getCurrentPosition(onGPSSuccess, onGPSError);
@@ -21,6 +23,7 @@ function initializeItems(){
 	  }
     storage = window.localStorage;
     onEventsPage();
+    delete initializeItems;
 }
 
 function onLoadLandingPage(){
@@ -28,28 +31,35 @@ function onLoadLandingPage(){
       var imgClass = (this.width/this.height > 1) ? 'wide' : 'tall';
       $(this).addClass(imgClass);
      });
+    delete onLoadLandingPage;
 }
 
 function gotoSchedule(){
-    window.location.href="#SchedulePage";
+    xmlhttp.abort();
+    onSchedulePage();
 }
 
 function gotoSessions(){
-    window.location.href="#SessionsPage";
+    xmlhttp.abort();
+    onSessionsPage();
 }
 
 function gotoPresenters(){
-    window.location.href="#PresentersPage";
+    xmlhttp.abort();
+    onPresentersPage();
 }
 
 function gotoSponsors(){
-    window.location.href="#SponsorsPage";
+    xmlhttp.abort();
+    onSponsorsPage();
 }
 
 function gotoAbout(){
+    xmlhttp.abort();
     window.location.href="#AboutPage";
 }
 
 function gotoLocations(){
+    xmlhttp.abort();
     window.location.href="#LocationPage";
 }

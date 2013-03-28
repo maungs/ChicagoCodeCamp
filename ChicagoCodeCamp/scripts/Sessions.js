@@ -13,7 +13,7 @@ function LoadSessions(Id){
         var SessionsLast = SessionsLastPulled==null? today.getTime(): parseInt(SessionsLastPulled);
         var now = today.getTime();
         var hoursPassed = (now-SessionsLast) / one_hour;
-        if ((hoursPassed >= 24) || (hoursPassed ==0)) { 
+        if ((hoursPassed >= 0) || (hoursPassed ==0)) { 
             xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sessions/" + Id,true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = SessionsLoaded;
@@ -27,7 +27,7 @@ function SessionsLoaded( result){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
         jSessions = jQuery.parseJSON(xmlhttp.responseText);
-        BindSessions(jSessions);
+        BindSessions();
 		var today=new Date();
         var SessionsList = xmlhttp.responseText;
         storage["SessionsList"] =SessionsList;
@@ -38,18 +38,19 @@ function SessionsLoaded( result){
 function LoadSessionsFromStorage()
 {
        var SessionsList = storage["SessionsList"];
-       var jsonFeed = jQuery.parseJSON(SessionsList);
-       BindSessions(jsonFeed);
+       jSessions= jQuery.parseJSON(SessionsList);
+       BindSessions();
        app.hideLoading();
 }
-function BindSessions(jsonArray)
+function BindSessions()
 {
     SessionsModel = {
-				Sessions: ko.observableArray(jsonArray),
+				Sessions: ko.observableArray(jSessions),
                 SessionSelected : SessionSelect
             };
 		
 	ko.applyBindings(SessionsModel, document.getElementById('SessionsList'));
+    window.location.href="#SessionsPage";
 }
 function SessionSelect(e) {
     alert(e.Id);

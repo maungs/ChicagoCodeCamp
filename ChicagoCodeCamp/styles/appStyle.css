@@ -8,7 +8,7 @@ body {background: #F1F1F1;}
 
 .twoby {width:40%; margin:5%; height:105px; float:left; background-size: 100%; display:table;}
 #LandingPageView .frontMenu { color:#000; margin-top: -10px; margin-bottom: -10px;}
-.sEventSchedule{display: none;}
+
 
 .twoby img.wide {
     max-width: 100%;
@@ -19,7 +19,7 @@ body {background: #F1F1F1;}
     max-height: 100%;
     max-width: 100%;
     width: auto;
-}​
+}
 
 .km-android .km-view .km-content {color:#000; background-color: #F1F1F1; background:#F1F1F1;}
 .km-ios .km-view .km-content {color:#000; background-color: #F1F1F1;}
@@ -28,7 +28,7 @@ body {background: #F1F1F1;}
 /* --- SELECT BOX --- */
 select {
     border: 1px solid #800000;
-    background: #800000;
+    background: transparent;
     border-radius: 5px;
     color: #800000;
     width: 240px;
@@ -39,7 +39,6 @@ select {
     padding: 2px 2px 2px 10px;
     background: transparent url("../images/down_arrow.png") no-repeat 210px center;
 }
-
 
 /* -- KENDO BUTTON OVERRIDE -- */
 
@@ -61,6 +60,9 @@ select {
 .km-ios .km-view .km-navbar .km-button.km-state-active:before {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #800000), color-stop(49%, #800000), color-stop(50%, #800000), color-stop(100%, #800000));
 }
+.km-ios .km-view .km-navbar .km-button {
+    background-color: rgb(255, 0, 0);
+}
 
 .km-android .km-view .km-navbar  {
     height:0;
@@ -70,3 +72,22 @@ select {
 }
 
 
+.km-android .select {
+    border: 1px solid #800000;
+    background: transparent;
+    border-radius: 5px;
+    color: #FFF;
+    width: 240px;
+    height:30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 2px 2px 10px;
+    background: transparent url("../images/down_arrow.png") no-repeat 210px center;
+}
+.km-android .selectStyle{
+    margin-top: 20px;
+    background:#800000;
+    width: 240px;
+    height:30px;
+}

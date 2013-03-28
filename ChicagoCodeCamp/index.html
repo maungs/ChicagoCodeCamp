@@ -3,18 +3,29 @@
     <head>
         <title></title>
         <meta charset="utf-8" />
-        <script src="cordova.js"></script>
+        <script src="scripts/knockout.js"></script>
+        <link href="styles/appStyle.css" rel="stylesheet"/>
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href="styles/Profile.css" rel="stylesheet"/>
+        <link href="styles/Sessions.css" rel="stylesheet"/>
+        <link href="styles/Schedule.css" rel="stylesheet"/>
         <script src="kendo/js/jquery.min.js"></script>
         <script src="kendo/js/kendo.mobile.min.js"></script>
-        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-        <link href="styles/appStyle.css" rel="stylesheet"/>
+        <script src="scripts/Schedules.js"></script>
+        <script src="scripts/Presenters.js"></script>
+        <script src="scripts/Presenter.js"></script>
+        <script src="scripts/Sponsors.js"></script>
+        <script src="scripts/Sessions.js"></script>
+        <script src="scripts/Events.js"></script>
+        <script src="scripts/Schedules.js"></script>
+        <script src="cordova.js"></script>
     </head>
-    <body onload="onBodyLoad()">
+    <body>
         <div data-role="view" data-layout="layout" id="LandingPageView" data-transition="slide" data-stretch="true" data-show="onLoadLandingPage">
             <div class="content">
                 <div class="fullScreenLeft"> 
                     <center>
-                        <div style="width: 100%; height: 35px; margin-top: 10px; ">
+                        <div class="selectStyle" style="width: 240px; height: 30px; margin-top: 20px;">
                             <center>
                                 <select id='sEventSchedule' class="sEventSchedule" data-align="left" 
                                     data-bind="options: Events, optionsText: 'Name', optionsValue: 'Id', value: selectedId" 
@@ -135,6 +146,26 @@
                 </div>
             </div>
         </div>
+        <div data-role="view" data-layout="layout" id="PresenterPage" data-transition="slide" data-show="onPresenterPage" >
+            <header data-role="header">
+                <div data-role="navbar">
+                    <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                    <div id="PresenterName"></div>
+                </div>
+            </header>
+            <div class="content">
+                <div class="fullScreenRight">
+                    <div  class="pContainerBig">
+                        <div class="pProfileImgB" id="pProfileImg" ></div>
+                        <div id="displayTwitter"><div class="pTwitter" id="pTwitter"></div><Image width="25" height="25" src="images/TwitterHome.png" style="position: absolute; margin-top: -28px; margin-left:124px;"><Image></div>
+                        <div class="pWebsiteB" id="pFacebook"></div>
+                        <div class="pWebsiteB" id="pLinkedIn"></div>
+                        <div class="pWebsiteB" id="pWebsite"></div>
+                        <div class="pContentB" id="pBio"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 <!--SPONSORS-->
         <div data-role="view" data-layout="layout" id="SponsorsPage" data-transition="slide" data-show="onSponsorsPage">
             <header data-role="header">
@@ -188,18 +219,8 @@
             </div>
         </div>                        
         <script src="scripts/appCode.js"></script>
-        <script>
+        <!--<script>
             new kendo.mobile.Application($(document.body), { initial: "LandingPageView"});
-        </script>
+        </script>-->
     </body>
-    <script src="scripts/knockout.js"></script>
-    <script src="scripts/Schedules.js"></script>
-    <script src="scripts/Presenters.js"></script>
-    <script src="scripts/Sponsors.js"></script>
-    <script src="scripts/Sessions.js"></script>
-    <script src="scripts/Events.js"></script>
-    <script src="scripts/Schedules.js"></script>
-    <link href="styles/Profile.css" rel="stylesheet"/>
-    <link href="styles/Sessions.css" rel="stylesheet"/>
-    <link href="styles/Schedule.css" rel="stylesheet"/>
 </html>
