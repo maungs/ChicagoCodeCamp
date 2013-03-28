@@ -58,30 +58,24 @@
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenRight" style="Background: #fff;">
-                    <ul  data-role="listview">
-                    <div id="SchedulesList" data-bind="template: {name: 'schedulesTemplate', foreach: Schedules}"></div>
-    					<script id="schedulesTemplate" type="text/html">
-    							<li>
-                                    <div data-bind="text: Name +' @'+ StartsAt +'-'+ EndsAt +''" class ="schSession"></div>
-    								<ul data-bind="foreach: Sessions">
-    									<li >
-                                            <div class="schContainer"  style="Background: #fff;">
-                                            <div class="schName" data-bind="text: Title"></div>
-                                            <!-- ko if: SecondSpeaker -->
-                                            <div class="schContent" data-bind="text: '1st Speaker: '+Speaker"></div>
-                                            <div class="schContent" data-bind="text: '2nd Speaker: '+SecondSpeaker"></div>
-                                            <!-- /ko -->
-                                            <!-- ko if: !SecondSpeaker -->
-                                            <div class="schContent" data-bind="text: 'Speaker: '+Speaker"></div>
-                                            <!-- /ko -->
-                                            <div class="schContent" data-bind="text: Track +': '+TrackDescription"></div>
-                                            </div>
-    									</li>
-    								</ul>
-    							</li>
-    					</script>
-					</ul>
+                <div class="fullScreenRight">
+                    <div  data-role="listview" style="background: #ffffff;" id="SchedulesList" data-bind="template: {name: 'schedulesTemplate', foreach: Schedules}"></div>
+					<script id="schedulesTemplate" type="text/html">
+                                <div data-bind="text: Name +' @'+ StartsAt +'-'+ EndsAt +''" class ="schSession"></div>
+								<div data-bind="foreach: Sessions">
+                                        <div class="schContainer"  style="Background: #fff;" data-bind="click: $parents[1].SchedulesSelected">
+                                        <div class="schName" data-bind="text: Title"></div>
+                                        <!-- ko if: SecondSpeaker -->
+                                        <div class="schContent" data-bind="text: '1st Speaker: '+Speaker"></div>
+                                        <div class="schContent" data-bind="text: '2nd Speaker: '+SecondSpeaker"></div>
+                                        <!-- /ko -->
+                                        <!-- ko if: !SecondSpeaker -->
+                                        <div class="schContent" data-bind="text: 'Speaker: '+Speaker"></div>
+                                        <!-- /ko -->
+                                        <div class="schContent" data-bind="text: Track +': '+TrackDescription"></div>
+                                        </div>
+								</div>
+					</script>
                 </div>
             </div>
         </div>
@@ -95,22 +89,19 @@
             </header>
             <div class="content">
                 <div  class="fullScreenRight">
-                    <ul  data-role="listview">
-                        <div id="SessionsList" data-bind="template: {name: 'SessionsTemplate', foreach: Sessions}"></div>
-    					<script id="SessionsTemplate" type="text/html">
-                            <li>
-                                <div  class="sContainer">
-                                    <div>
-                                        <div class="sTitle" data-bind="text: Title"></div>
-                                        <div class="AbstractBrief" data-bind="text: Abstract"></div> 
-                                        <div class="sExtra" data-bind="text: 'Level: '+Level"></div>
-                                        <div class="sExtra" data-bind="text: 'Keywords: '+keywords">
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </script>
-                    </ul>
+                    <div  data-role="listview"  style="background: #ffffff;" id="SessionsList" data-bind="template: {name: 'SessionsTemplate', foreach: Sessions}"></div>
+					<script id="SessionsTemplate" type="text/html">
+                        <div  class="sContainer" data-bind="click: $parent.SessionSelected">
+                            <div>
+                                <div class="sTitle" data-bind="text: Title"></div>
+                                <div class="AbstractBrief" data-bind="text: Abstract"></div> 
+                                <div class="sExtra" data-bind="text: 'Level: '+Level"></div>
+                                <!-- ko if: keywords -->
+                                <div class="sExtra" data-bind="text: 'Keywords: '+keywords"></div>
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                    </script>
                 </div>
             </div>
         </div>
@@ -124,11 +115,11 @@
             </header>
             <div class="content">
                 <div class="fullScreenRight">
-                    <ul  data-role="listview">
+                    <ul  data-role="listview" style="background: #ffffff;">
                         <div id="PresentersList" data-bind="template: {name: 'presenterTemplate', foreach: Presenters}"></div>
     					<script id="presenterTemplate" type="text/html">
                             <li>
-                                <div  class="pContainer"  style="Background: #fff;">
+                                <div  class="pContainer" data-bind="click: $parent.PresenterSelected">
                                     <div class="pProfileImg" data-bind="style:{backgroundImage: 'url('+AvatarURL+')' }" ></div>
                                     <div class="pName" data-bind="text: FirstName+' '+LastName"></div>
 									<!-- ko if: Twitter -->
@@ -153,20 +144,15 @@
                 </div>
             </header>
             <div class="content">
-                <div class="fullScreenRight" style="Background: #fff;">
-                    <ul  data-role="listview">
-                    <div id="SponsorsList" data-bind="template: {name: 'sponsorsTemplate', foreach: Sponsors}"></div>
+                <div class="fullScreenRight">
+                    <div id="SponsorsList" data-role="listview" style="background: #ffffff;" data-bind="template: {name: 'sponsorsTemplate', foreach: Sponsors}"></div>
     					<script id="sponsorsTemplate" type="text/html">
-    							<li>
+    							
     								<div data-bind="style:{'backgroundColor':ThemeColor}" style="Height:30px; text-align:center; padding-top:10px;"><h3 data-bind="text: Name"></h3></div>
-    								<ul data-bind="foreach: sponsors">
-    									<li >
-    			                        <Image data-bind="attr:{src: LogoLink}" width="310" height="240" style="padding-bottom:2.5px; padding-top:2.5px; padding-left:5px; padding-right:5px;"></Image>
-    									</li>
-    								</ul>
-    							</li>
+    								<div data-bind="foreach: sponsors">
+    									<center><Image data-bind="attr:{src: LogoLink}" width="290" height="200"  style="margin-left:auto; margin-right: auto; margin-top: 10px;"></Image></center>
+    								</div>
     					</script>
-					</ul>
                 </div>
             </div>
         </div>

@@ -45,7 +45,11 @@ function LoadSchedulesFromStorage()
 function BindSchedules(jsonArray)
 {
     SchedulesModel = {
-				Schedules: ko.observableArray(jsonArray)
+				Schedules: ko.observableArray(jsonArray),
+                SchedulesSelected : ScheduleSelect
             };	
 	ko.applyBindings(SchedulesModel, document.getElementById('SchedulesList'));
+}
+function ScheduleSelect(e) {
+    alert(e.SubmissionId);
 }

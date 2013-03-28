@@ -98,8 +98,10 @@
     <Content Include="scripts\appCode.js" />
     <Content Include="scripts\Events.js" />
     <Content Include="scripts\knockout.js" />
+    <Content Include="scripts\Presenter.js" />
     <Content Include="scripts\Presenters.js" />
     <Content Include="scripts\Schedules.js" />
+    <Content Include="scripts\Session.js" />
     <Content Include="scripts\Sessions.js" />
     <Content Include="scripts\Sponsors.js" />
     <Content Include="styles\appStyle.css" />

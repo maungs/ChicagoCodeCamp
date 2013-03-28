@@ -45,8 +45,12 @@ function LoadSessionsFromStorage()
 function BindSessions(jsonArray)
 {
     SessionsModel = {
-				Sessions: ko.observableArray(jsonArray)
+				Sessions: ko.observableArray(jsonArray),
+                SessionSelected : SessionSelect
             };
 		
 	ko.applyBindings(SessionsModel, document.getElementById('SessionsList'));
+}
+function SessionSelect(e) {
+    alert(e.Id);
 }

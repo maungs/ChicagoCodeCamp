@@ -45,8 +45,12 @@ function LoadPresentersFromStorage()
 function BindPresenters(jsonArray)
 {
     PresentersModel = {
-				Presenters: ko.observableArray(jsonArray)
+				Presenters: ko.observableArray(jsonArray),
+                PresenterSelected : PresenterSelect
             };
 		
 	ko.applyBindings(PresentersModel, document.getElementById('PresentersList'));
+}
+function PresenterSelect(e) {
+    alert(e.FirstName + ' ' + e.LastName);
 }
