@@ -6,6 +6,7 @@ function onSessionsPage(){
     LoadSessions(EventId);
 }
 function LoadSessions(Id){
+        app.showLoading();
         var today=new Date();
         var one_hour=1000*60*60;
         var SessionsLastPulled = storage["SessionsLast"];
@@ -13,15 +14,18 @@ function LoadSessions(Id){
         var now = today.getTime();
         var hoursPassed = (now-SessionsLast) / one_hour;
         if ((hoursPassed >= 0) || (hoursPassed ==0)) { 
-            app.showLoading();
             xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sessions/" + Id,true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = SessionsLoaded;
         }
         if(jSessions==null)
         {
-            app.showLoading();
             LoadSessionsFromStorage();
+        }
+        else
+        { 
+            window.location.href="#SessionsPage";
+            app.hideLoading();
         }
 }
 function SessionsLoaded( result){

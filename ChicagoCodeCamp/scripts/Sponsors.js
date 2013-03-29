@@ -6,6 +6,7 @@ function onSponsorsPage(){
     LoadSponsors(EventId);
 }
 function LoadSponsors(Id){
+        app.showLoading();
         var today=new Date();
         var one_hour=1000*60*60;
         var SponsorsLastPulled = storage["SponsorsLast"];
@@ -13,15 +14,18 @@ function LoadSponsors(Id){
         var now = today.getTime();
         var hoursPassed = (now-SponsorsLast) / one_hour;
         if ((hoursPassed >= 24) || (hoursPassed ==0)) {
-            app.showLoading();
             xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sponsors/" + Id,true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = SponsorsLoaded;
         }
         if(jSponsors==null)
         {
-            app.showLoading();
             LoadSponsorsFromStorage();
+        }
+        else
+        { 
+            window.location.href="#SponsorsPage";
+            app.hideLoading();
         }
 }
 function SponsorsLoaded( result){
