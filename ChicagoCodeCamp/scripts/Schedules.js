@@ -5,7 +5,6 @@ function onSchedulePage(){
     LoadSchedules(EventId);
 }
 function LoadSchedules(Id){
-        app.showLoading();
         var today=new Date();
         var one_hour=1000*60*60;
         var SchedulesLastPulled = storage["SchedulesLast"];
@@ -13,12 +12,14 @@ function LoadSchedules(Id){
         var now = today.getTime();
         var hoursPassed = (now-SchedulesLast) / one_hour;
         if ((hoursPassed >= 2) || (hoursPassed ==0)) { 
+            app.showLoading();
             xmlhttp.open("GET","http://www.chicagocodecamp.com/API/Schedules/" + Id,true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = SchedulesLoaded;
         }
-        else
+        if(jSchedules==null)
         {
+            app.showLoading();
             LoadSchedulesFromStorage();
         }
 }

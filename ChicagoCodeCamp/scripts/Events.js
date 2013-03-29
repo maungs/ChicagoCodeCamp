@@ -6,10 +6,6 @@ function onEventsPage(){
     LoadEvents();
 }
 function LoadEvents(){
-    
-    app.showLoading();
-    
-    
     var today=new Date();
 	var one_hour=1000*60*60;
 	var lastPulled = 0;
@@ -22,12 +18,14 @@ function LoadEvents(){
 	var now = today.getTime();
 	var hoursPassed = (now-lastPulled) / one_hour;
     if ((hoursPassed >= 12 || hoursPassed ==0)) { 
+        app.showLoading();
         xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Events/",true);
         xmlhttp.send();
         xmlhttp.onreadystatechange = EventsLoaded;
     }
-    else
+    if(jEvents==null)
     {
+        app.showLoading();
         LoadEventsFromStorage();
     }
 }
