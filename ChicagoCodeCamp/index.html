@@ -11,6 +11,7 @@
         <link href="styles/Schedule.css" rel="stylesheet"/>
         <script src="kendo/js/jquery.min.js"></script>
         <script src="kendo/js/kendo.mobile.min.js"></script>
+        <script type="text/javascript" src="http://api.maps.nokia.com/2.2.3/jsl.js?with=all" charset="utf-8"></script>
         <script src="scripts/Schedules.js"></script>
         <script src="scripts/Presenters.js"></script>
         <script src="scripts/Presenter.js"></script>
@@ -197,12 +198,16 @@
             </header>
             <div class="content">
                 <div class="fullScreenRight">
-                   
+                   <p>    <br>
+                          Chicago Code Camp is a not for profit technical camp created for the developers by the developers. It was founded in 2008 by a handful of developers. The code camp is a free event and everyone is invited to come and participate.<br><br>
+                          The camp is technology agnostic and our presenters are typically the best in their field. In the past, we have presenters talked about various mobile platforms, web technologies, desktop applications, and hardware development.<br><br>
+                          Since the code camp is a free event, we are always on the look out for sponsors. If you or your organization would like to support us, please contact our staff during the code camp. The code camp staff would like to thank all the current sponsors.
+                   </p>
                 </div>
             </div>
         </div>
 <!--LOCATION-->
-        <div data-role="view" data-layout="layout" id="LocationPage" data-transition="slide" data-stretch="true" >
+        <div data-role="view" data-layout="layout" id="LocationPage" data-transition="slide" data-stretch="true" data-show="onLoadLocationPage">
             <header data-role="header">
                 <div data-role="navbar">
                     <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
@@ -211,10 +216,31 @@
             </header>
             <div class="content">
                 <div class="fullScreenRight">
-                 <p>19351 W Washington Street<br/>Grayslake, IL 60030</p>
-                    <iframe width="100%" height="320" frameborder="0" scrolling="no" marginheight="0"
-                        marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=19351+W+Washington+Street+Grayslake,+IL.+60030&amp;aq=&amp;sll=39.739318,-89.266507&amp;sspn=11.246898,26.784668&amp;ie=UTF8&amp;hq=&amp;hnear=19351+W+Washington+St,+Grayslake,+Lake,+Illinois+60030&amp;t=m&amp;ll=42.36051,-88.010015&amp;spn=0.030443,0.054932&amp;z=14&amp;iwloc=A&amp;output=embed">
-                    </iframe>
+                    <style>
+                        #mapContainer {
+                            width: 100%;
+                            height: 70%;
+                            left: 0;
+                            top: 0;
+                            position: absolute; -webkit-box-shadow: 0px 2px 4px 0px #575757;
+                        }
+                        #uiContainer {
+                            width: 100%;
+                            left: 0;
+                            top: 70%;
+                            position: absolute;
+                        }
+            		</style>
+
+		            <div id="mapContainer"></div>
+                    <div id="uiContainer">
+                        <div style="margin-left:20px;">
+                            <br>
+                            <div class="pharmName" style="font-size:16pt; margin-bottom:.1em; color:#176cc1;">Chicago Code Camp</div>
+                            <div id="pharmAddress1" style="font-size:12pt;">19351 W Washington Street<br></div>
+                            <div id="pharmAddress2" style="font-size:12pt;">Grayslake, Illinois 60030<br></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>                        
