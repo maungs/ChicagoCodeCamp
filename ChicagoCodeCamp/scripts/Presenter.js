@@ -1,6 +1,7 @@
 function onPresenterPage(){
     
     app.showLoading();
+    HideSocial();
     var URL = window.location.toString();
     var queryList = URL.split("?");       
     var PresenterId = queryList[1];
@@ -16,6 +17,10 @@ function onPresenterPage(){
     {
         LoadPresenter(PresenterId);
     }
+}
+function HideSocial(){
+    document.getElementById('displayTwitter').style.display = "none";
+    document.getElementById('displayWebsite').style.display = "none";
 }
 function GetLocalPresenter(PresenterId){
     var i =0;
@@ -37,23 +42,43 @@ function LoadPresenter(Id){
 function PresenterLoaded( result){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-        alert('xhr complete');
         var jPresenter = jQuery.parseJSON(xmlhttp.responseText);
-        alert(jPresenter[0].FirstName);
-        FillOutPresenter(jPresenter[0]);
+        FillOutPresenter(jPresenter);
     }
     app.hideLoading();
 }
 function FillOutPresenter(Presenter)
 {
-    document.getElementById('PresenterName').innerHTML = Presenter.FirstName + ' ' + Presenter.LastName;
-    if(Presenter.Twitter !=null && Presenter.Twitter.toString().length>0){
-        document.getElementById('pTwitter').innerHTML = Presenter.Twitter;
-        //document.getElementById('displayTwitter').style.display = "block";
+    document.getElementById('pNameB').innerHTML = Presenter.FirstName + '<br/>' + Presenter.LastName;
+    if(Presenter.hasOwnProperty("AvatarURL"))
+    {
+        if(Presenter.AvatarURL)
+        {
+            document.getElementById('pProfileImg').style.backgroundImage="url('"+Presenter.AvatarURL+"')";
+        }
     }
-    if(Presenter.Website !=null && Presenter.Website.toString().length>0){
-        document.getElementById('pWebsiteB').innerHTML = Presenter.Website;
-        //document.getElementById('pWebsiteB').style.display = "block";
+    if(Presenter.hasOwnProperty("Twitter"))
+    {
+        if(Presenter.Twitter)
+        {
+            document.getElementById('pTwitter').innerHTML = Presenter.Twitter;
+            document.getElementById('displayTwitter').style.display = "block";
+        }
+    }
+    if(Presenter.hasOwnProperty("Website"))
+    {
+        if(Presenter.Website)
+        {
+            document.getElementById('pWebsite').innerHTML = Presenter.Website;
+            document.getElementById('displayWebsite').style.display = "block";
+        }
+    }
+    if(Presenter.hasOwnProperty("Biography"))
+    {
+        if(Presenter.Biography)
+        {
+            document.getElementById('pBio').innerHTML = Presenter.Biography;
+        }
     }
     //document.getElementById('pContentB').innerHTML = '';
 }

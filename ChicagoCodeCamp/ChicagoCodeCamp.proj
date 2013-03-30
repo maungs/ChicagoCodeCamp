@@ -72,6 +72,11 @@
     <Content Include="images\backgrounds\backgroundRight.png" />
     <Content Include="images\down_arrow.png" />
     <Content Include="images\headshot.png" />
+    <Content Include="images\iconFacebook.png" />
+    <Content Include="images\iconLink.png" />
+    <Content Include="images\iconLinkedIn.png" />
+    <Content Include="images\iconSpeakerRate.png" />
+    <Content Include="images\iconTwitterRed.png" />
     <Content Include="images\mainpage\icon_CCC.png" />
     <Content Include="images\mainpage\icon_Map.png" />
     <Content Include="images\mainpage\icon_Presenter.png" />
