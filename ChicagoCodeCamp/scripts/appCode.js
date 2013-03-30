@@ -1,15 +1,46 @@
 var xmlhttp;
 var storage;
+var tempLong, tempLatt, map, mapContainer;
+nokia.Settings.set("appId", "_peU-uCkp-j8ovkzFGNU"); 
+nokia.Settings.set("authenticationToken", "gBoUkAMoxoqIWfxWA5DuMQ");
+
 var app = new kendo.mobile.Application(document.body);
 
-	$().ready(function () {
-  
-    initializeItems();
-		});
-
+$().ready(function () {
+  document.addEventListener("deviceready", onDeviceReady, false);
+  initializeItems();
+  initializeMap(); 
+});
 
 function onDeviceReady() {
-  //navigator.geolocation.getCurrentPosition(onGPSSuccess, onGPSError);
+  navigator.geolocation.getCurrentPosition(onGPSSuccess, onGPSError);
+
+}
+
+function onGPSSuccess(position) {
+    tempLatt = position.coords.latitude;
+    tempLong = position.coords.longitude;
+    var resultSet;
+    if (resultSet) map.objects.remove(resultSet);
+    resultSet = new nokia.maps.map.Container();
+    coord = new nokia.maps.geo.Coordinate(tempLatt, tempLong);
+    var myLocationMarker = new nokia.maps.map.StandardMarker(
+        [tempLatt, tempLong],
+        { 
+          text: 'ME',
+          brush: { color: "#800000" },
+          textPen: { strokeColor: "#FFF" },
+          pen: { strokeColor: "#176cc2" }
+        }
+     );
+     map.objects.add(myLocationMarker); 
+    
+    
+ }
+
+function onGPSError(error) { 
+  // your callback here
+  alert('GPS is not available on the device');
 }
 
 function initializeItems(){
@@ -25,6 +56,32 @@ function initializeItems(){
     onEventsPage();
     delete initializeItems;
 }
+
+function initializeMap(){
+    
+    
+    mapContainer = document.getElementById("mapContainer");
+    map = new nokia.maps.map.Display(mapContainer, {
+    	center: [42.360525,-88.010777],
+    	zoomLevel: 11,
+        components: [new nokia.maps.map.component.Behavior()]
+    });
+    
+    var myLocationMarker = new nokia.maps.map.StandardMarker(
+        [42.360525,-88.010777],
+        { 
+          text: 'CCC',
+          brush: { color: "#176cc2" },
+          textPen: { strokeColor: "#FFF" },
+          pen: { strokeColor: "#176cc2" }
+        }
+     );
+     map.objects.add(myLocationMarker); 
+     coord = new nokia.maps.geo.Coordinate(42.360525,-88.010777);
+     map.set("center", coord);
+    
+}
+
 
 function onLoadLandingPage(){
     $('.twoby').find('img').each(function(){
