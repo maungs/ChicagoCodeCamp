@@ -6,7 +6,6 @@ function onSponsorsPage(){
     LoadSponsors(EventId);
 }
 function LoadSponsors(Id){
-        app.showLoading();
         var today=new Date();
         var one_hour=1000*60*60;
         var SponsorsLastPulled = storage["SponsorsLast"];

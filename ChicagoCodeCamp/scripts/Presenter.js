@@ -23,7 +23,7 @@ function GetLocalPresenter(PresenterId){
         if(jPresenters[i].Id ==PresenterId)
         {
             FillOutPresenter(jPresenters[i]);
-            LoadPresenter(Id);
+            LoadPresenter(PresenterId);
             break;
         }
     }
@@ -37,6 +37,7 @@ function LoadPresenter(Id){
 function PresenterLoaded( result){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
+        alert('xhr complete');
         var jPresenter = jQuery.parseJSON(xmlhttp.responseText);
         alert(jPresenter[0].FirstName);
         FillOutPresenter(jPresenter[0]);
@@ -54,5 +55,5 @@ function FillOutPresenter(Presenter)
         document.getElementById('pWebsiteB').innerHTML = Presenter.Website;
         //document.getElementById('pWebsiteB').style.display = "block";
     }
-    document.getElementById('pContentB').innerHTML = '';
+    //document.getElementById('pContentB').innerHTML = '';
 }

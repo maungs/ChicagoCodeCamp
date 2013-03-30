@@ -35,31 +35,37 @@ function onLoadLandingPage(){
 }
 
 function gotoSchedule(){
-    xmlhttp.abort();
+    app.showLoading();
+    StopXHR();
     onSchedulePage();
 }
 
 function gotoSessions(){
-    xmlhttp.abort();
+    app.showLoading();
+    StopXHR();
     onSessionsPage();
 }
 
 function gotoPresenters(){
-    xmlhttp.abort();
+    app.showLoading();
+    StopXHR();
     onPresentersPage();
 }
 
 function gotoSponsors(){
-    xmlhttp.abort();
+    app.showLoading();
+    StopXHR();
     onSponsorsPage();
 }
 
 function gotoAbout(){
-    xmlhttp.abort();
     window.location.href="#AboutPage";
 }
 
 function gotoLocations(){
-    xmlhttp.abort();
     window.location.href="#LocationPage";
 }
+function StopXHR(){
+    if(xmlhttp.readyState!=4 || xmlhttp.readyState!=0)
+        xmlhttp.abort();
+} 

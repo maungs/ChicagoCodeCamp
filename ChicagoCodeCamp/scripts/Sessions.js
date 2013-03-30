@@ -6,7 +6,6 @@ function onSessionsPage(){
     LoadSessions(EventId);
 }
 function LoadSessions(Id){
-        app.showLoading();
         var today=new Date();
         var one_hour=1000*60*60;
         var SessionsLastPulled = storage["SessionsLast"];

@@ -6,7 +6,6 @@ function onPresentersPage(){
     LoadPresenters(EventId);
 }
 function LoadPresenters(Id){
-        app.showLoading();
         var today=new Date();
         var one_hour=1000*60*60;
         var PresentersLastPulled = storage["PresentersLast"];
