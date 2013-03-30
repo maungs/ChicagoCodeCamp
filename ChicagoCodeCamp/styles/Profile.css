@@ -90,7 +90,8 @@ background-size: cover; /*generic*/
 .pContentB{
 font-size: 9.5pt;
 padding: 5px;
-text-align: left;
+text-align: justify;
+text-justify: inter-word;
 color: #000;
 }
 .pNameB{
