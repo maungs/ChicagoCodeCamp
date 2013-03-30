@@ -23,6 +23,7 @@ function GetLocalPresenter(PresenterId){
         if(jPresenters[i].Id ==PresenterId)
         {
             FillOutPresenter(jPresenters[i]);
+            LoadPresenter(Id);
             break;
         }
     }

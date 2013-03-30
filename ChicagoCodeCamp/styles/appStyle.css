@@ -86,3 +86,10 @@ select {
     width: 240px;
     height:30px;
 }
+
+.Sponsor{
+margin-left:auto; margin-right: auto; margin-top: 10px;
+-moz-box-shadow: 3px 2px 2px rgba(0,0,0,.5);
+-webkit-box-shadow: 3px 2px 2px rgba(0,0,0,.5);
+box-shadow: 3px 2px 2px rgba(0,0,0,.5);
+}
