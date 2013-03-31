@@ -6,6 +6,14 @@ margin-top: 20px;position: relative;
 -webkit-box-shadow: 3px 3px 2px rgba(0,0,0,.5);
 box-shadow: 3px 3px 2px rgba(0,0,0,.5);
 }
+.sContainerD{
+width:98%; border: 1px solid #800000;
+margin-left: auto; margin-right:auto;
+margin-top: 20px;position: relative;
+-moz-box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+-webkit-box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+}
 .sTitle {
     height: 30px;
     font-size: 15pt;
@@ -18,12 +26,21 @@ box-shadow: 3px 3px 2px rgba(0,0,0,.5);
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+.sTitleD {
+    font-size: 15pt;
+    padding-top: 5px;
+    padding-left: 4px;
+    text-align: left;
+    color: #FFF;
+    background: #800000;
+}
 .Abstract {
     white-space: pre-wrap;      /* CSS3 */   
     white-space: -moz-pre-wrap; /* Firefox */    
     white-space: -pre-wrap;     /* Opera <7 */   
     white-space: -o-pre-wrap;   /* Opera 7 */    
     word-wrap: break-word;      /* IE */
+    margin: 10px;
 }
 .AbstractBrief {
     color: #000;
@@ -35,14 +52,32 @@ box-shadow: 3px 3px 2px rgba(0,0,0,.5);
     white-space: -pre-wrap;     /* Opera <7 */   
     white-space: -o-pre-wrap;   /* Opera 7 */    
     word-wrap: break-word;      /* IE */
+    margin: 10px;
 }
 .sExtra {
     height: 30px;
-    
     bottom: 0px;
     padding-left: 12px;
     padding-top: 2px;
     font-size: larger;
     white-space: nowrap;
 	overflow: hidden;
+	text-overflow: ellipsis;
 }
+.sExtraD {
+    padding-left: 12px;
+    padding-top: 2px;
+    font-size: larger;
+}
+.sProfileImg{
+width:100px; height:100px; 
+margin-top:10px; margin-left:10px; border: 1px solid #800000;
+background-repeat:no-repeat;
+background-repeat:no-repeat;
+background-position:center;
+-webkit-background-size: cover; /*for webKit*/
+-moz-background-size: cover; /*Mozilla*/
+-o-background-size: cover; /*opera*/
+background-size: cover; /*generic*/
+}
+

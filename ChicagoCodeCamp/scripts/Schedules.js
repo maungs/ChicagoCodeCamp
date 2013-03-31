@@ -56,5 +56,5 @@ function BindSchedules(jsonArray)
     window.location.href="#SchedulePage";
 }
 function ScheduleSelect(e) {
-    alert(e.SubmissionId);
+    window.location.href="#SessionPage?"+e.SubmissionId;
 }

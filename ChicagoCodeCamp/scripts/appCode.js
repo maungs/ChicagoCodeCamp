@@ -1,18 +1,21 @@
 var xmlhttp;
 var storage;
 var tempLong, tempLatt, map, mapContainer;
+var sSpeaker=0, sSpeaker2=0;
 nokia.Settings.set("appId", "_peU-uCkp-j8ovkzFGNU"); 
 nokia.Settings.set("authenticationToken", "gBoUkAMoxoqIWfxWA5DuMQ");
 
 var app = new kendo.mobile.Application(document.body);
 
 $().ready(function () {
+  app.showLoading();
   document.addEventListener("deviceready", onDeviceReady, false);
   initializeItems();
   initializeMap(); 
 });
 
 function onDeviceReady() {
+  app.showLoading();
   navigator.geolocation.getCurrentPosition(onGPSSuccess, onGPSError);
 
 }
@@ -34,13 +37,13 @@ function onGPSSuccess(position) {
         }
      );
      map.objects.add(myLocationMarker); 
-    
-    
+     app.hideLoading();
  }
 
 function onGPSError(error) { 
   // your callback here
   alert('GPS is not available on the device');
+  app.hideLoading();
 }
 
 function initializeItems(){

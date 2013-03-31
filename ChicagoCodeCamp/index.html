@@ -17,6 +17,7 @@
         <script src="scripts/Presenter.js"></script>
         <script src="scripts/Sponsors.js"></script>
         <script src="scripts/Sessions.js"></script>
+        <script src="scripts/Session.js"></script>
         <script src="scripts/Events.js"></script>
         <script src="scripts/Schedules.js"></script>
         <script src="cordova.js"></script>
@@ -117,6 +118,46 @@
                 </div>
             </div>
         </div>
+        <div data-role="view" data-layout="layout" id="SessionPage" data-transition="slide" data-show="onSessionPage">
+            <header data-role="header">
+                <div data-role="navbar">
+                    <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                    Session Info
+                </div>
+            </header>
+            <div class="content">
+                <div  class="fullScreenRight">
+                    <div  data-role="listview" class="sContainerD" style="background:#fff;">
+                        <div>
+                            <div class="sTitleD" id='sTitle'></div>
+                            <div style="width:100%;">
+                                <table style="width:100px;">
+                                    <tr>
+                                        <td>
+                                            <div class="sProfileImg" onclick="goto1presenter();" id="sProfileImg" >
+                                                <div style="position: relative; top: 91px; left:-1px; height:20px; 
+                                                    background: #800000; text-align:center; color: #FFFFFF; width:102px;
+                                                    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"  
+                                                    id="sSpeaker"></div></div>
+                                        </td>
+                                        <td>
+                                            <div class="sProfileImg" onclick="goto2presenter();" id="sProfile2Img" >
+                                                <div style="position: relative; top: 91px;left:-1px; height:20px; 
+                                                    background: #800000; text-align:center; color: #FFFFFF; width:102px;
+                                                    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" 
+                                                    id="sSpeaker2"></div></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                                    <div class="Abstract" id='sAbstract'></div> 
+                                    <div class="sExtraD" id='sLevel'></div>
+                                    <div class="sExtraD" id='sKeywords'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 <!--SPEAKERS-->
         <div data-role="view" data-layout="layout" id="PresentersPage" data-transition="slide" data-show="onPresentersPage" >
             <header data-role="header">
@@ -201,7 +242,7 @@
                           Chicago Code Camp is a not for profit technical camp created for the developers by the developers. It was founded in 2008 by a handful of developers. The code camp is a free event and everyone is invited to come and participate.<br><br>
                           The camp is technology agnostic and our presenters are typically the best in their field. In the past, we have presenters talked about various mobile platforms, web technologies, desktop applications, and hardware development.<br><br>
                           Since the code camp is a free event, we are always on the look out for sponsors. If you or your organization would like to support us, please contact our staff during the code camp. The code camp staff would like to thank all the current sponsors.
-                          <br/><center>Contact: <a href="mailto:Organizers@chicagocodecamp.com">Organizers@ChicagoCodeCamp.com</a></center>
+                          <br/><br/><center>Contact: <a href="mailto:Organizers@chicagocodecamp.com">Organizers@ChicagoCodeCamp.com</a></center>
                    </p>
                 </div>
             </div>

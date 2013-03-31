@@ -57,5 +57,5 @@ function BindSessions()
     window.location.href="#SessionsPage";
 }
 function SessionSelect(e) {
-    alert(e.Id);
+    window.location.href="#SessionPage?"+e.Id;
 }
