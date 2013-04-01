@@ -12,7 +12,7 @@ function LoadSessions(Id){
         var SessionsLast = SessionsLastPulled==null? today.getTime(): parseInt(SessionsLastPulled);
         var now = today.getTime();
         var hoursPassed = (now-SessionsLast) / one_hour;
-        if ((hoursPassed >= 0) || (hoursPassed ==0)) { 
+        if ((hoursPassed >= 24) || (hoursPassed ==0)) { 
             xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sessions/" + Id,true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = SessionsLoaded;
