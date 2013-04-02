@@ -1,6 +1,8 @@
-function onPresenterPage(){
+function onPresenterPage(e){
     
     app.showLoading();
+    var scroller = e.view.scroller;
+    scroller.reset();
     HideSocial();
     var URL = window.location.toString();
     var queryList = URL.split("?");       
@@ -21,6 +23,8 @@ function onPresenterPage(){
 function HideSocial(){
     document.getElementById('displayTwitter').style.display = "none";
     document.getElementById('displayWebsite').style.display = "none";
+    document.getElementById('pBio').innerHTML = "";
+    document.getElementById('pNameB').innerHTML="";
 }
 function GetLocalPresenter(PresenterId){
     var i =0;

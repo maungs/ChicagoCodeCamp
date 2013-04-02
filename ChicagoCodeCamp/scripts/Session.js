@@ -1,6 +1,8 @@
 
-function onSessionPage(){
+function onSessionPage(e){
     app.showLoading();
+    var scroller = e.view.scroller;
+    scroller.reset();
     HideProfileImage();
     var URL = window.location.toString();
     var queryList = URL.split("?");       

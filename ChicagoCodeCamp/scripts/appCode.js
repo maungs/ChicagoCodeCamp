@@ -10,7 +10,6 @@ var app = new kendo.mobile.Application(document.body);
 $().ready(function () {
   app.showLoading();
   document.addEventListener("deviceready", onDeviceReady, false);
-  initializeItems();
   initializeMap(); 
 });
 
@@ -36,14 +35,14 @@ function onGPSSuccess(position) {
           pen: { strokeColor: "#176cc2" }
         }
      );
-     map.objects.add(myLocationMarker); 
-     app.hideLoading();
+    map.objects.add(myLocationMarker); 
+    initializeItems();
  }
 
 function onGPSError(error) { 
   // your callback here
   alert('GPS is not available on the device');
-  app.hideLoading();
+  initializeItems();
 }
 
 function initializeItems(){
@@ -58,6 +57,7 @@ function initializeItems(){
     storage = window.localStorage;
     onEventsPage();
     delete initializeItems;
+    app.hideLoading();
 }
 
 function initializeMap(){
