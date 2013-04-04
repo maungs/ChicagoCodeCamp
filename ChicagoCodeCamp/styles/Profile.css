@@ -39,6 +39,26 @@ white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
 }
+.km-android .pName{
+margin-top:-122px;
+width: 190px;
+}
+.pTwitterImg{
+position: absolute; 
+margin-top:5px;
+margin-left:5px;
+}
+    
+.pTwitterImgB{
+position: absolute; 
+margin-top:5px;
+margin-left:124px;
+}
+
+.km-android .pTwitterImgB{
+margin-left:0px;
+}
+    
 .pContent{
 margin-left: 105px;
 height: 30px;
@@ -52,6 +72,7 @@ overflow: hidden;
 text-overflow: ellipsis;
 }
 .pTwitter{
+margin-top: -15px;
 margin-left: 105px;
 height: 30px;
 font-size: 12pt;
@@ -120,6 +141,7 @@ overflow: hidden;
 text-overflow: ellipsis;
 }
 .displayTwitter{
+margin-top:15px;
 height:25px;
 display:none;
 }

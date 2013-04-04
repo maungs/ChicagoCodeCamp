@@ -36,27 +36,27 @@
                         </div>
                     </center> 
                     <div onTouchStart="gotoSchedule();" id="cccSchedule" class="twoby">
-                        <img src="images/mainpage/icon_Schedule.png" style="margin-left:10px;"/>
+                        <center><img src="images/mainpage/icon_Schedule.png" style="margin-left:10px; height:100px; width:100px;"/></center>
                         <div class="frontMenu"><center>Schedule</center></div>
                     </div>
                     <div onClick="gotoSessions();" id="cccSessions" class="twoby">
-                        <img src="images/mainpage/icon_Sessions.png" style="margin-left:10px;"/>
+                        <center><img src="images/mainpage/icon_Sessions.png" style="margin-left:10px; height:100px; width:100px;"/></center>
                         <div class="frontMenu"><center>Sessions</center></div>
                     </div><br>
                     <div onTouchStart="gotoPresenters();" id="cccSpeakers" class="twoby">
-                        <img src="images/mainpage/icon_Presenter.png" style="margin-left:10px;"/>
+                        <center><img src="images/mainpage/icon_Presenter.png" style="margin-left:10px; height:100px; width:100px;"/></center>
                         <div class="frontMenu"><center>Presenters</center></div>
                     </div>
                     <div onTouchStart="gotoSponsors();" id="cccSponsors" class="twoby">
-                        <img src="images/mainpage/icon_Sponsors.png" style="margin-left:10px;"/>
+                        <center><img src="images/mainpage/icon_Sponsors.png" style="margin-left:10px; height:100px; width:100px;"/></center>
                         <div class="frontMenu"><center>Sponsors</center></div>
                     </div><br>
                     <div onClick="gotoAbout();" id="cccAbout" class="twoby">
-                        <img src="images/mainpage/icon_CCC.png" style="margin-left:10px;"/>
+                        <center><img src="images/mainpage/icon_CCC.png" style="margin-left:10px; height:100px; width:100px;"/></center>
                         <div class="frontMenu"><center>About</center></div>
                     </div>
                     <div onClick="gotoLocations();" id="cccLocation" class="twoby">
-                        <img src="images/mainpage/icon_Map.png" style="margin-left:10px;"/>
+                        <center><img src="images/mainpage/icon_Map.png" style="margin-left:10px; height:100px; width:100px;"/></center>
                         <div class="frontMenu"><center>Location</center></div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                                     <div class="pProfileImg" data-bind="style:{backgroundImage: 'url('+AvatarURL+')' }" ></div>
                                     <div class="pName" data-bind="text: FirstName+' '+LastName"></div>
 									<!-- ko if: Twitter -->
-									<div style="Height: 30px;"><div class="pTwitter" data-bind="text: Twitter"></div><Image width="25" height="25" src="images/TwitterHome.png" style="position: absolute; margin-top: -28px; margin-left:104px;"><Image></div>
+									<div style="Height: 30px;"><Image width="25" height="25" src="images/TwitterHome.png" class="pTwitterImg"><Image><div class="pTwitter" data-bind="text: Twitter"></div></div>
 									<!-- /ko -->
 									<!-- ko if: Website -->
                                     <div class="pWebsite" data-bind="text: Website"></div>
@@ -200,7 +200,7 @@
                     <div data-role="listview" class="pContainerBig">
                         <div class="pProfileImgB" id="pProfileImg" ></div>
                         <div class="pNameB" id="pNameB"></div>
-                        <div id="displayTwitter" class="displayTwitter"><div class="pTwitter" id="pTwitter"></div><Image width="25" height="25" src="images/iconTwitterRed.png" style="position: absolute; margin-top: -28px; margin-left:124px;"></Image></div>
+                        <div id="displayTwitter" class="displayTwitter"><Image width="25" height="25" src="images/iconTwitterRed.png" class="pTwitterImgB"></Image><div class="pTwitter" id="pTwitter"></div></div>
                         <div class="displayTwitter" id="displayWebsite"><div class="pWebsite" id="pWebsite"></div></div>
                         <div class="pContentB" id="pBio"></div>
                     </div>
