@@ -14,9 +14,9 @@ $().ready(function () {
 });
 
 function onDeviceReady() {
-  app.showLoading();
-  navigator.geolocation.getCurrentPosition(onGPSSuccess, onGPSError);
-
+  //app.showLoading();
+  //navigator.geolocation.getCurrentPosition(onGPSSuccess, onGPSError);
+    initializeItems();
 }
 
 function onGPSSuccess(position) {
@@ -36,7 +36,6 @@ function onGPSSuccess(position) {
         }
      );
     map.objects.add(myLocationMarker); 
-    initializeItems();
  }
 
 function onGPSError(error) { 

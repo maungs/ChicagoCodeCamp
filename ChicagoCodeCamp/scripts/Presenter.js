@@ -48,8 +48,8 @@ function PresenterLoaded( result){
     {
         var jPresenter = jQuery.parseJSON(xmlhttp.responseText);
         FillOutPresenter(jPresenter);
+        app.hideLoading();
     }
-    app.hideLoading();
 }
 function FillOutPresenter(Presenter)
 {
