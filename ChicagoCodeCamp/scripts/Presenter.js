@@ -39,11 +39,11 @@ function GetLocalPresenter(PresenterId){
 }
 
 function LoadPresenter(Id){
+    xmlhttp.onreadystatechange = PresenterLoaded;
     xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Presenter/" + Id,true);
     xmlhttp.send();
-    xmlhttp.onreadystatechange = PresenterLoaded;
 }
-function PresenterLoaded( result){
+function PresenterLoaded(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
         var jPresenter = jQuery.parseJSON(xmlhttp.responseText);

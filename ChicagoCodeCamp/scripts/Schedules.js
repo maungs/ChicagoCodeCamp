@@ -12,9 +12,9 @@ function LoadSchedules(Id){
         var now = today.getTime();
         var hoursPassed = (now-SchedulesLast) / one_hour;
         if ((hoursPassed >= 4) || (hoursPassed ==0)) { 
+            xmlhttp.onreadystatechange = SchedulesLoaded;
             xmlhttp.open("GET","http://www.chicagocodecamp.com/API/Schedules/" + Id,true);
             xmlhttp.send();
-            xmlhttp.onreadystatechange = SchedulesLoaded;
         }
         if(jSchedules==null)
         {
@@ -26,7 +26,7 @@ function LoadSchedules(Id){
             app.hideLoading();
         }
 }
-function SchedulesLoaded( result){
+function SchedulesLoaded(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
         jSchedules = jQuery.parseJSON(xmlhttp.responseText);

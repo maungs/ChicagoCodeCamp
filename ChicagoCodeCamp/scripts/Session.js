@@ -37,11 +37,11 @@ function GetLocalSession(SessionId){
 }
 
 function LoadSession(Id){
+    xmlhttp.onreadystatechange = SessionLoaded;
     xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Session/" + Id,true);
     xmlhttp.send();
-    xmlhttp.onreadystatechange = SessionLoaded;
 }
-function SessionLoaded( result){
+function SessionLoaded(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
         var jSession = jQuery.parseJSON(xmlhttp.responseText);

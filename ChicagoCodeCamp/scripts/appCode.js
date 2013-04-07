@@ -94,25 +94,21 @@ function onLoadLandingPage(){
 }
 
 function gotoSchedule(){
-    app.showLoading();
     StopXHR();
     onSchedulePage();
 }
 
 function gotoSessions(){
-    app.showLoading();
     StopXHR();
     onSessionsPage();
 }
 
 function gotoPresenters(){
-    app.showLoading();
     StopXHR();
     onPresentersPage();
 }
 
 function gotoSponsors(){
-    app.showLoading();
     StopXHR();
     onSponsorsPage();
 }
@@ -126,5 +122,8 @@ function gotoLocations(){
 }
 function StopXHR(){
     if(xmlhttp.readyState!=4 || xmlhttp.readyState!=0)
-        xmlhttp.abort();
+    {
+        //xmlhttp.abort();
+    }
+    app.showLoading();
 } 

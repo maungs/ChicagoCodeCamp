@@ -13,9 +13,9 @@ function LoadSessions(Id){
         var now = today.getTime();
         var hoursPassed = (now-SessionsLast) / one_hour;
         if ((hoursPassed >= 24) || (hoursPassed ==0)) { 
+            xmlhttp.onreadystatechange = SessionsLoaded;
             xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sessions/" + Id,true);
             xmlhttp.send();
-            xmlhttp.onreadystatechange = SessionsLoaded;
         }
         if(jSessions==null)
         {
@@ -27,7 +27,7 @@ function LoadSessions(Id){
             app.hideLoading();
         }
 }
-function SessionsLoaded( result){
+function SessionsLoaded(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
         jSessions = jQuery.parseJSON(xmlhttp.responseText);

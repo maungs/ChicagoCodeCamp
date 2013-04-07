@@ -13,9 +13,9 @@ function LoadPresenters(Id){
         var now = today.getTime();
         var hoursPassed = (now-PresentersLast) / one_hour;
         if ((hoursPassed >= 24) || (hoursPassed ==0)) { 
+            xmlhttp.onreadystatechange = PresentersLoaded;
             xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Presenters/" + Id,true);
             xmlhttp.send();
-            xmlhttp.onreadystatechange = PresentersLoaded;
         }
         if(jPresenters==null)
         {
@@ -27,7 +27,7 @@ function LoadPresenters(Id){
             app.hideLoading();
         }
 }
-function PresentersLoaded( result){
+function PresentersLoaded(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
         jPresenters = jQuery.parseJSON(xmlhttp.responseText);
