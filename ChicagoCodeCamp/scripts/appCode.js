@@ -94,35 +94,53 @@ function onLoadLandingPage(){
 }
 
 function gotoSchedule(){
-    StopXHR();
-    onSchedulePage();
+    $(this).on('touchend', function(e){
+        StopXHR();
+        onSchedulePage();
+        $(this).off('touchend');
+    });
 }
 
-function gotoSessions(){
-    StopXHR();
-    onSessionsPage();
+function gotoSessions(e){
+    $(this).on('touchend', function(e){
+        StopXHR();
+        onSessionsPage();
+        $(this).off('touchend');
+    });
 }
 
 function gotoPresenters(){
-    StopXHR();
-    onPresentersPage();
+    $(this).on('touchend', function(e){
+        StopXHR();
+        onPresentersPage();
+        $(this).off('touchend');
+    });
 }
 
 function gotoSponsors(){
-    StopXHR();
-    onSponsorsPage();
+    $(this).on('touchend', function(e){
+        StopXHR();
+        onSponsorsPage();
+        $(this).off('touchend');
+    });
 }
 
 function gotoAbout(){
-    window.location.href="#AboutPage";
+    $(this).on('touchend', function(e){
+        window.location.href="#AboutPage";
+        $(this).off('touchend');
+    });
 }
 
 function gotoLocations(){
-    window.location.href="#LocationPage";
+    $(this).on('touchend', function(e){
+        window.location.href="#LocationPage";
+        $(this).off('touchend');
+    });
 }
 function StopXHR(){
     if(xmlhttp.readyState!=4 || xmlhttp.readyState!=0)
     {
-        //xmlhttp.abort();
+        xmlhttp.abort();
     }
 } 
