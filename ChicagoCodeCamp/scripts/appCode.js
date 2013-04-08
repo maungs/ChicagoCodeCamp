@@ -102,11 +102,8 @@ function gotoSchedule(){
 }
 
 function gotoSessions(e){
-    $(this).on('touchend', function(e){
-        StopXHR();
-        onSessionsPage();
-        $(this).off('touchend');
-    });
+    StopXHR();
+    onSessionsPage();
 }
 
 function gotoPresenters(){
