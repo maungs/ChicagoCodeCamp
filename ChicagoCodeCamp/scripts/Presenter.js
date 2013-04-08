@@ -10,7 +10,7 @@ function onPresenterPage(e){
     var PresentersList = storage["PresentersList"];
     jPresenters = jQuery.parseJSON(PresentersList);
     
-    if(jPresenters!= null || jPresenters.length>0)
+    if(jPresenters!= null && jPresenters.length>0)
     {
         GetLocalPresenter(PresenterId);
         LoadPresenter(PresenterId);
@@ -40,7 +40,7 @@ function GetLocalPresenter(PresenterId){
 
 function LoadPresenter(Id){
     xmlhttp.onreadystatechange = PresenterLoaded;
-    xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Presenter/" + Id,true);
+    xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Presenter/" + Id.toString()+"?json=true",true);
     xmlhttp.send();
 }
 function PresenterLoaded(){

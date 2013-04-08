@@ -3,6 +3,7 @@ var jSessions;
 var SessionsModel;
 
 function onSessionsPage(){
+    app.showLoading();
     LoadSessions(EventId);
 }
 function LoadSessions(Id){
@@ -14,7 +15,7 @@ function LoadSessions(Id){
         var hoursPassed = (now-SessionsLast) / one_hour;
         if ((hoursPassed >= 24) || (hoursPassed ==0)) { 
             xmlhttp.onreadystatechange = SessionsLoaded;
-            xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sessions/" + Id,true);
+            xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sessions/" + Id.toString()+"?json=true",true);
             xmlhttp.send();
         }
         if(jSessions==null)

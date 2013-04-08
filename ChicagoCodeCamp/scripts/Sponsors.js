@@ -15,7 +15,7 @@ function LoadSponsors(Id){
         var hoursPassed = (now-SponsorsLast) / one_hour;
         if ((hoursPassed >= 24) || (hoursPassed ==0)) {
             xmlhttp.onreadystatechange = SponsorsLoaded;
-            xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sponsors/" + Id.toString(),true);
+            xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sponsors/" + Id.toString()+"?json=true",true);
             xmlhttp.send();
         }
         else if(jSponsors==null)
@@ -36,7 +36,6 @@ function SponsorsLoaded(){
     {
         jSponsors = jQuery.parseJSON(xmlhttp.responseText);
         
-        alert('Before bind');
         BindSponsors();
         sponsorsList = xmlhttp.responseText;
         storage["SponsorsList"] =sponsorsList;
@@ -54,14 +53,10 @@ function LoadSponsorsFromStorage()
 }
 function BindSponsors()
 {
-    
-        alert('Before');
     SponsorsModel = {
 				Sponsors: ko.observableArray(jSponsors)
             };
-        alert('After');
 		
 	ko.applyBindings(SponsorsModel, document.getElementById('SponsorsList'));
-        alert('Now');
     window.location.href="#SponsorsPage";
 }

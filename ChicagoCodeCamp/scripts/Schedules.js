@@ -2,6 +2,7 @@ var jSchedules;
 var SchedulesModel;
 
 function onSchedulePage(){
+    app.showLoading();
     LoadSchedules(EventId);
 }
 function LoadSchedules(Id){
@@ -13,7 +14,7 @@ function LoadSchedules(Id){
         var hoursPassed = (now-SchedulesLast) / one_hour;
         if ((hoursPassed >= 4) || (hoursPassed ==0)) { 
             xmlhttp.onreadystatechange = SchedulesLoaded;
-            xmlhttp.open("GET","http://www.chicagocodecamp.com/API/Schedules/" + Id,true);
+            xmlhttp.open("GET","http://www.chicagocodecamp.com/API/Schedules/" + Id.toString()+"?json=true",true);
             xmlhttp.send();
         }
         if(jSchedules==null)

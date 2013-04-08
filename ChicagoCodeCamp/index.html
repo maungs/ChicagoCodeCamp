@@ -39,7 +39,7 @@
                         <center><img src="images/mainpage/icon_Schedule.png" style="height:100px; width:100px;"/></center>
                         <div class="frontMenu"><center>Schedule</center></div>
                     </div>
-                    <div onClick="gotoSessions();" id="cccSessions" class="twoby">
+                    <div onTouchStart="gotoSessions();" id="cccSessions" class="twoby">
                         <center><img src="images/mainpage/icon_Sessions.png" style="height:100px; width:100px;"/></center>
                         <div class="frontMenu"><center>Sessions</center></div>
                     </div><br>
@@ -174,13 +174,15 @@
                             <li>
                                 <div  class="pContainer" data-bind="click: $parent.PresenterSelected">
                                     <div class="pProfileImg" data-bind="style:{backgroundImage: 'url('+AvatarURL+')' }" ></div>
-                                    <div class="pName" data-bind="text: FirstName+' '+LastName"></div>
-									<!-- ko if: Twitter -->
-									<div style="Height: 30px;"><Image width="25" height="25" src="images/TwitterHome.png" class="pTwitterImg"><Image><div class="pTwitter" data-bind="text: Twitter"></div></div>
-									<!-- /ko -->
-									<!-- ko if: Website -->
-                                    <div class="pWebsite" data-bind="text: Website"></div>
-									<!-- /ko -->
+                                    <div class="pContentDetail">
+                                        <div class="pName" data-bind="text: FirstName+' '+LastName"></div>
+    									<!-- ko if: Twitter -->
+    									<div style="Height: 30px;"><Image width="25" height="25" src="images/TwitterHome.png" class="pTwitterImg"><Image><div class="pTwitter" data-bind="text: Twitter"></div></div>
+    									<!-- /ko -->
+    									<!-- ko if: Website -->
+                                        <div class="pWebsite" data-bind="text: Website"></div>
+    									<!-- /ko -->
+                                    </div>
                                 </div>
                             </li>
                         </script>
@@ -199,9 +201,11 @@
                 <div class="fullScreenRight">
                     <div data-role="listview" class="pContainerBig">
                         <div class="pProfileImgB" id="pProfileImg" ></div>
+                        <div class="pContentDetailB">
                         <div class="pNameB" id="pNameB"></div>
                         <div id="displayTwitter" class="displayTwitter"><Image width="25" height="25" src="images/iconTwitterRed.png" class="pTwitterImgB"></Image><div class="pTwitter" id="pTwitter"></div></div>
                         <div class="displayWebsite" id="displayWebsite"><div class="pWebsiteB" id="pWebsite"></div></div>
+                        </div>
                         <div class="pContentB" id="pBio"></div>
                     </div>
                 </div>

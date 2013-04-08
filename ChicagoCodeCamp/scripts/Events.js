@@ -3,27 +3,24 @@ var EventsModel;
 var EventId=5;
 
 function onEventsPage(){
+    app.showLoading();
     LoadEvents();
 }
 function LoadEvents(){
     var today=new Date();
 	var one_hour=1000*60*60;
 	var lastPulled = 0;
-	try {
-		lastPulled=storage["EventsLastPulled"];
-	} catch (e) {
-	 
-	}
+	lastPulled=storage["EventsLastPulled"];
 	lastPulled = lastPulled==null? today.getTime(): parseInt(lastPulled);
 	var now = today.getTime();
 	var hoursPassed = (now-lastPulled) / one_hour;
     if ((hoursPassed >= 12 || hoursPassed ==0)) { 
         app.showLoading();
         xmlhttp.onreadystatechange = EventsLoaded;
-        xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Events/",true);
+        xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Events?json=true",true);
         xmlhttp.send();
     }
-    if(jEvents==null)
+    else if(jEvents==null)
     {
         app.showLoading();
         LoadEventsFromStorage();
@@ -44,12 +41,7 @@ function EventsLoaded( ){
 }
 function LoadEventsFromStorage()
 {
-    alert('Not This');
     var eventsList = storage.eventsList;
-    if(eventsList == null || eventsList == "")
-    {
-        eventsList = '[{"Id":5,"Name":"Chicago Code Camp 2013","EventDate":"2013-05-05T00:00:00"}]';
-    }
     jEvents = jQuery.parseJSON(eventsList);
     BindEvents();
     app.hideLoading();
@@ -60,7 +52,6 @@ function BindEvents()
 				Events : ko.observableArray(jEvents),
 				selectedId : ko.observable(jEvents[0].Id)  // Nothing selected by default
 			};
-    alert('bind');
     ko.applyBindings(EventsModel, document.getElementById('sEventSchedule'));
     EventId=jEvents[0].Id;
     document.getElementById('sEventSchedule').style.display = "block";

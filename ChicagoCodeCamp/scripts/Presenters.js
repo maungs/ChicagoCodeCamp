@@ -3,6 +3,7 @@ var jPresenters;
 var PresentersModel;
 
 function onPresentersPage(){
+    app.showLoading();
     LoadPresenters(EventId);
 }
 function LoadPresenters(Id){
@@ -14,7 +15,7 @@ function LoadPresenters(Id){
         var hoursPassed = (now-PresentersLast) / one_hour;
         if ((hoursPassed >= 24) || (hoursPassed ==0)) { 
             xmlhttp.onreadystatechange = PresentersLoaded;
-            xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Presenters/" + Id,true);
+            xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Presenters/" + Id.toString()+"?json=true",true);
             xmlhttp.send();
         }
         if(jPresenters==null)

@@ -125,5 +125,4 @@ function StopXHR(){
     {
         //xmlhttp.abort();
     }
-    app.showLoading();
 } 

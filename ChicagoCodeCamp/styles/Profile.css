@@ -30,12 +30,17 @@ background-position:center;
 -o-background-size: cover; /*opera*/
 background-size: cover; /*generic*/
 }
+.pContentDetail{
+margin-left:100px;
+}
+.pContentDetailB{
+margin-left:120px;
+}
 .pName{
-margin-left: 100px ;
 height: 30px;
 font-size: 12pt;
 padding-top: 5px;
-padding-right: 24px;
+padding-left: 10px;
 text-align: left;
 color: #FFF;
 background: #800000;
@@ -45,7 +50,6 @@ text-overflow: ellipsis;
 }
 .km-android .pName{
 margin-top:0px;
-width: 163px;
 }
 .pTwitterImg{
 position: absolute; 
@@ -56,7 +60,6 @@ margin-left:5px;
 .pTwitterImgB{
 position: absolute; 
 margin-top:5px;
-margin-left:124px;
 }
 
 
@@ -75,7 +78,7 @@ text-overflow: ellipsis;
 }
 .pTwitter{
 margin-top: -15px;
-margin-left: 105px;
+margin-left: 5px;
 height: 30px;
 font-size: 12pt;
 padding-top: 5px;
@@ -86,11 +89,9 @@ white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
 }
-.km-android .pTwitter{
-width:120px;
-}
+
 .pWebsite{
-margin-left: 105px;
+margin-left: 5px;
 height: 30px;
 font-size: 9.5pt;
 padding-top: 5px;
@@ -100,9 +101,7 @@ color: #000;
 overflow: hidden;
 text-overflow: ellipsis;
 }
-.km-android .pWebsite{
-width:180px;
-}
+
 .pProfileImgB{
 width:120px; height: 120px; 
 border-right: 1px solid #800000; 
@@ -124,7 +123,6 @@ text-justify: inter-word;
 color: #000;
 }
 .pNameB{
-margin-left: 100px ;
 height: 50px;
 font-size: 12pt;
 padding-top: 5px;
@@ -139,10 +137,8 @@ text-overflow: ellipsis;
 }
 .km-android .pNameB{
 margin-top:0px;
-width: 163px;
 }
 .pWebsiteB{
-margin-left: 125px;
 height: 30px;
 font-size: 9.5pt;
 padding-top: 5px;
@@ -151,9 +147,6 @@ text-align: left;
 color: #000;
 overflow: hidden;
 text-overflow: ellipsis;
-}
-.km-android .pWebsiteB{
-width: 180px;
 }
 .displayWebsite{
 margin-top:15px;

@@ -7,16 +7,16 @@ function onSessionPage(e){
     var URL = window.location.toString();
     var queryList = URL.split("?");       
     var SessionId = queryList[1];
-    var SessionsList = storage["SessionsList"];
-    jSessions = jQuery.parseJSON(SessionsList);
     
-    if(jSessions!= null || jSessions.length>0)
+    if(jSessions == null || jSessions.length==0)
     {
-        GetLocalSession(SessionId);
+        var SessionsList = storage["SessionsList"];
+        jSessions = jQuery.parseJSON(SessionsList);
         LoadSession(SessionId);
     }
-    else
+    else 
     {
+        GetLocalSession(SessionId);
         LoadSession(SessionId);
     }
 }
@@ -38,7 +38,7 @@ function GetLocalSession(SessionId){
 
 function LoadSession(Id){
     xmlhttp.onreadystatechange = SessionLoaded;
-    xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Session/" + Id,true);
+    xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Session/" + Id.toString()+"?json=true",true);
     xmlhttp.send();
 }
 function SessionLoaded(){
