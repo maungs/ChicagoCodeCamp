@@ -1,0 +1,50 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps" xmlns:Location="clr-namespace:System.Device.Location;assembly=System.Device"
+    x:Class="Chicago_Code_Camp.Views.Location"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    mc:Ignorable="d"
+    Foreground="#800000"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="#F1F1F1"
+    shell:SystemTray.ForegroundColor="#800000">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Images/backgrounds/backgroundBlank.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Foreground="#800000" Text="CHICAGO CODE CAMP" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Foreground="#800000" Text="Location" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+            <Maps:Map VerticalAlignment="Top"  CredentialsProvider="Aqj6oK06XTYHyCVHU7cJ8bVvf6ZeHv_0-uWE6-HaX0tzp7JrNBwU8styYFFIEsh1" Height="378" ZoomLevel="15">
+                <Maps:Map.Center>
+                    <Location:GeoCoordinate Altitude="NaN" Course="NaN" HorizontalAccuracy="NaN" Longitude="-88.010777" Latitude="42.360525" Speed="NaN" VerticalAccuracy="NaN"/>
+                </Maps:Map.Center>
+            </Maps:Map>
+            <TextBlock Foreground="#800000" HorizontalAlignment="Left" Margin="10,383,0,0" TextWrapping="Wrap" Text="19351 W Washington Street" VerticalAlignment="Top" RenderTransformOrigin="0.529,0.617" Height="46" Width="446" FontSize="32"/>
+            <TextBlock Foreground="#800000" HorizontalAlignment="Left" Margin="10,429,0,0" TextWrapping="Wrap" Text="Grayslake, Illinois 60030" VerticalAlignment="Top" RenderTransformOrigin="0.529,0.617" Height="46" Width="446" FontSize="32"/>
+            <Button Foreground="#800000" BorderBrush="#800000" Content="Map It" HorizontalAlignment="Left" Margin="36,475,0,0" VerticalAlignment="Top" Width="208" Click="Button_Click_1"/>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
