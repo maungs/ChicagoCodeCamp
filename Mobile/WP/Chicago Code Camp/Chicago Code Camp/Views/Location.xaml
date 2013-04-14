@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps" xmlns:Location="clr-namespace:System.Device.Location;assembly=System.Device"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
     x:Class="Chicago_Code_Camp.Views.Location"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -32,18 +33,15 @@
             <TextBlock Foreground="#800000" Text="Location" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
-        <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
-            <Maps:Map VerticalAlignment="Top"  CredentialsProvider="Aqj6oK06XTYHyCVHU7cJ8bVvf6ZeHv_0-uWE6-HaX0tzp7JrNBwU8styYFFIEsh1" Height="378" ZoomLevel="15">
-                <Maps:Map.Center>
-                    <Location:GeoCoordinate Altitude="NaN" Course="NaN" HorizontalAccuracy="NaN" Longitude="-88.010777" Latitude="42.360525" Speed="NaN" VerticalAccuracy="NaN"/>
-                </Maps:Map.Center>
-            </Maps:Map>
             <TextBlock Foreground="#800000" HorizontalAlignment="Left" Margin="10,383,0,0" TextWrapping="Wrap" Text="19351 W Washington Street" VerticalAlignment="Top" RenderTransformOrigin="0.529,0.617" Height="46" Width="446" FontSize="32"/>
             <TextBlock Foreground="#800000" HorizontalAlignment="Left" Margin="10,429,0,0" TextWrapping="Wrap" Text="Grayslake, Illinois 60030" VerticalAlignment="Top" RenderTransformOrigin="0.529,0.617" Height="46" Width="446" FontSize="32"/>
             <Button Foreground="#800000" BorderBrush="#800000" Content="Map It" HorizontalAlignment="Left" Margin="36,475,0,0" VerticalAlignment="Top" Width="208" Click="Button_Click_1"/>
-
+            <maps:Map x:Name="MapControl" VerticalAlignment="top" ZoomLevel="15" Height="378" Loaded="MapControl_Loaded">
+                <maps:Map.Center>
+                    <Location:GeoCoordinate Altitude="NaN" Course="NaN" HorizontalAccuracy="NaN" Longitude="-88.010777" Latitude="42.360525" Speed="NaN" VerticalAccuracy="NaN"/>
+                </maps:Map.Center>
+            </maps:Map>
         </Grid>
     </Grid>
 

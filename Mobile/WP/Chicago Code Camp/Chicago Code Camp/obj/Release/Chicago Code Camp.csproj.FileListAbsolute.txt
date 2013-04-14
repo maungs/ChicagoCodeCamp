@@ -3,14 +3,12 @@ C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\Chicago Code Camp.dll
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\Chicago Code Camp.pdb
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\AppManifest.xaml
-C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\Chicago Code Camp.xap
+C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\Chicago Code Camp_Release_AnyCPU.xap
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\microsoft.phone.controls.maps.dll
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\Microsoft.Phone.Controls.Toolkit.dll
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\Newtonsoft.Json.dll
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\Microsoft.Phone.Controls.dll
-C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\microsoft.phone.controls.maps.xml
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\Newtonsoft.Json.xml
-C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\Bin\Release\Microsoft.Phone.Controls.xml
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\obj\Release\App.g.cs
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\obj\Release\MainPage.g.cs
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\obj\Release\Views\About.g.cs
@@ -25,3 +23,4 @@ C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\obj\Release\Chicago Code Camp.dll
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\obj\Release\Chicago Code Camp.pdb
 C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\obj\Release\XapCacheFile.xml
+C:\Version Control\ChicagoCodeCamp\Mobile\WP\Chicago Code Camp\Chicago Code Camp\obj\Release\Chicago Code Camp.csprojResolveAssemblyReference.cache

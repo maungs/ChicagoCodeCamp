@@ -25,5 +25,11 @@ namespace Chicago_Code_Camp.Views
             bingTask.SearchTerm = "19351 West Washington Street, Grayslake, IL 60030-1198";
             bingTask.Show();
         }
+
+        private void MapControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Phone.Maps.MapsSettings.ApplicationContext.ApplicationId = "25dd2a23-c301-4336-86f5-1d1d9a25e53e";
+            Microsoft.Phone.Maps.MapsSettings.ApplicationContext.AuthenticationToken = "9ybNh2xcCsp_ZqoN_d9cHA";
+        }
     }
 }
