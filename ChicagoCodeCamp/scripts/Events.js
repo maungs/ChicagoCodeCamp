@@ -25,7 +25,7 @@ function LoadEvents(){
     }
 }
 function EventsLoaded( ){
-    EventId=5;
+    EventId=6;
     if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
         jEvents = jQuery.parseJSON(xmlhttp.responseText);
