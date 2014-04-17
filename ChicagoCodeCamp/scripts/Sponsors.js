@@ -13,12 +13,12 @@ function LoadSponsors(Id){
         var SponsorsLast = SponsorsLastPulled==null? today.getTime(): parseInt(SponsorsLastPulled);
         var now = today.getTime();
         var hoursPassed = (now-SponsorsLast) / one_hour;
-        if ((hoursPassed >= 24) || (hoursPassed ==0)) {
-            xmlhttp.onreadystatechange = SponsorsLoaded;
-            xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sponsors/" + Id.toString()+"?json=true",true);
-            xmlhttp.send();
-        }
-        else if(jSponsors==null)
+
+        xmlhttp.onreadystatechange = SponsorsLoaded;
+        xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sponsors/" + Id.toString()+"?json=true",true);
+        xmlhttp.send();
+            
+        if(jSponsors==null)
         {
             LoadSponsorsFromStorage();
         }

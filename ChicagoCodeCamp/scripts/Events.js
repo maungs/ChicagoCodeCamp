@@ -14,13 +14,11 @@ function LoadEvents(){
 	lastPulled = lastPulled==null? today.getTime(): parseInt(lastPulled);
 	var now = today.getTime();
 	var hoursPassed = (now-lastPulled) / one_hour;
-    if ((hoursPassed >= 12 || hoursPassed ==0)) { 
         app.showLoading();
         xmlhttp.onreadystatechange = EventsLoaded;
         xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Events?json=true",true);
         xmlhttp.send();
-    }
-    else if(jEvents==null)
+    if(jEvents==null)
     {
         app.showLoading();
         LoadEventsFromStorage();

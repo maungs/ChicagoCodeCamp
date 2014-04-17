@@ -13,11 +13,11 @@ function LoadSessions(Id){
         var SessionsLast = SessionsLastPulled==null? today.getTime(): parseInt(SessionsLastPulled);
         var now = today.getTime();
         var hoursPassed = (now-SessionsLast) / one_hour;
-        if ((hoursPassed >= 24) || (hoursPassed ==0)) { 
-            xmlhttp.onreadystatechange = SessionsLoaded;
-            xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sessions/" + Id.toString()+"?json=true",true);
-            xmlhttp.send();
-        }
+
+        xmlhttp.onreadystatechange = SessionsLoaded;
+        xmlhttp.open("GET","http://www.chicagocodecamp.com/api/Sessions/" + Id.toString()+"?json=true",true);
+        xmlhttp.send();
+        
         if(jSessions==null)
         {
             LoadSessionsFromStorage();

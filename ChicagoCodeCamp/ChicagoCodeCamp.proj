@@ -3,116 +3,31 @@
   <PropertyGroup>
     <ProjectGuid>7e5de3bf-f7d6-4afb-9cad-5369d0e62dc5</ProjectGuid>
     <ProjectTypeGuids>{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}</ProjectTypeGuids>
-    <AppIdentifier>com.telerik.iOS_Android</AppIdentifier>
+    <AppIdentifier>com.byteables.ios.ccc</AppIdentifier>
     <ProjectName>ChicagoCodeCamp</ProjectName>
     <IsRunnable>true</IsRunnable>
-    <TemplateAppName>Cordova240</TemplateAppName>
-    <AndroidPermissions>android.permission.CAMERA;android.permission.VIBRATE;android.permission.ACCESS_COARSE_LOCATION;android.permission.ACCESS_FINE_LOCATION;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;android.permission.READ_PHONE_STATE;android.permission.INTERNET;android.permission.RECEIVE_SMS;android.permission.RECORD_AUDIO;android.permission.MODIFY_AUDIO_SETTINGS;android.permission.READ_CONTACTS;android.permission.WRITE_CONTACTS;android.permission.WRITE_EXTERNAL_STORAGE;android.permission.ACCESS_NETWORK_STATE;android.permission.ACCOUNT_MANAGER;android.permission.GET_ACCOUNTS;android.permission.MANAGE_ACCOUNTS;android.permission.BROADCAST_STICKY</AndroidPermissions>
+    <AndroidPermissions>android.permission.ACCESS_COARSE_LOCATION;android.permission.ACCESS_FINE_LOCATION;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;android.permission.ACCESS_NETWORK_STATE;android.permission.ACCOUNT_MANAGER;android.permission.BROADCAST_STICKY;android.permission.CAMERA;android.permission.GET_ACCOUNTS;android.permission.INTERNET;android.permission.MANAGE_ACCOUNTS;android.permission.MODIFY_AUDIO_SETTINGS;android.permission.READ_CONTACTS;android.permission.READ_PHONE_STATE;android.permission.RECEIVE_SMS;android.permission.RECORD_AUDIO;android.permission.VIBRATE;android.permission.WRITE_CONTACTS;android.permission.WRITE_EXTERNAL_STORAGE</AndroidPermissions>
     <DeviceOrientations>Portrait</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
-    <BundleVersion>1.0</BundleVersion>
-    <iOSDisplayName>Chicago Code Camp</iOSDisplayName>
+    <BundleVersion>1.1</BundleVersion>
+    <iOSDisplayName>
+    </iOSDisplayName>
     <iOSDeviceFamily>1</iOSDeviceFamily>
-    <AndroidVersionCode>1</AndroidVersionCode>
+    <AndroidVersionCode>2</AndroidVersionCode>
+    <DisplayName>Chicago Code Camp</DisplayName>
+    <FrameworkVersion>3.2.0</FrameworkVersion>
+    <CorePlugins>org.apache.cordova.battery-status;org.apache.cordova.camera;org.apache.cordova.media-capture;org.apache.cordova.console;org.apache.cordova.contacts;org.apache.cordova.device;org.apache.cordova.device-motion;org.apache.cordova.device-orientation;org.apache.cordova.file;org.apache.cordova.file-transfer;org.apache.cordova.geolocation;org.apache.cordova.globalization;org.apache.cordova.inappbrowser;org.apache.cordova.media;org.apache.cordova.network-information;org.apache.cordova.dialogs;org.apache.cordova.splashscreen;org.apache.cordova.vibration</CorePlugins>
+    <Author>Min Maung Maung</Author>
+    <Description>ChicagoCodeCamp</Description>
+    <iOSBackgroundMode />
+    <WP8Requirements />
+    <WP8Capabilities />
+    <WP8TileTitle />
+    <WP8ProductID>{7e5de3bf-f7d6-4afb-9cad-5369d0e62dc5}</WP8ProductID>
+    <WP8PublisherID>{33341868-d130-4810-bda5-8240399e5994}</WP8PublisherID>
+    <WP8Publisher />
+    <WP8SupportedResolutions />
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="App_Resources" />
-    <Folder Include="App_Resources\iOS">
-      <Platform>iOS</Platform>
-    </Folder>
-    <Folder Include="App_Resources\Android">
-      <Platform>Android</Platform>
-    </Folder>
-    <Folder Include="App_Resources\Android\drawable-hdpi">
-      <Platform>Android</Platform>
-    </Folder>
-    <Folder Include="App_Resources\Android\drawable-mdpi">
-      <Platform>Android</Platform>
-    </Folder>
-    <Folder Include="App_Resources\Android\drawable-ldpi">
-      <Platform>Android</Platform>
-    </Folder>
-    <Folder Include="App_Resources\Android\drawable-nodpi">
-      <Platform>Android</Platform>
-    </Folder>
-    <Folder Include="images" />
-    <Folder Include="images\mainpage" />
-    <Folder Include="images\backgrounds" />
-    <Folder Include="images\navbar" />
-    <Folder Include="scripts" />
-    <Folder Include="styles" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="App_Resources\iOS\icon.png" />
-    <Resource Include="App_Resources\iOS\icon@2x.png" />
-    <Resource Include="App_Resources\iOS\icon-72.png" />
-    <Resource Include="App_Resources\iOS\icon-72@2x.png" />
-    <Resource Include="App_Resources\iOS\Icon-Small.png" />
-    <Resource Include="App_Resources\iOS\Icon-Small@2x.png" />
-    <Resource Include="App_Resources\iOS\Icon-Small-50.png" />
-    <Resource Include="App_Resources\iOS\Icon-Small-50@2x.png" />
-    <Resource Include="App_Resources\iOS\Default.png" />
-    <Resource Include="App_Resources\iOS\Default@2x.png" />
-    <Resource Include="App_Resources\iOS\Default-568h@2x.png" />
-    <Resource Include="App_Resources\iOS\Default-Portrait.png" />
-    <Resource Include="App_Resources\iOS\Default-Landscape.png" />
-    <Resource Include="App_Resources\iOS\Default-Portrait@2x.png" />
-    <Resource Include="App_Resources\iOS\Default-Landscape@2x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="App_Resources\Android\drawable-hdpi\icon.png" />
-    <Resource Include="App_Resources\Android\drawable-mdpi\icon.png" />
-    <Resource Include="App_Resources\Android\drawable-ldpi\icon.png" />
-    <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="images\backgrounds\backgroundBlank.png" />
-    <Content Include="images\backgrounds\backgroundLeft.png" />
-    <Content Include="images\backgrounds\backgroundRight.png" />
-    <Content Include="images\down_arrow.png" />
-    <Content Include="images\headshot.png" />
-    <Content Include="images\iconFacebook.png" />
-    <Content Include="images\iconLink.png" />
-    <Content Include="images\iconLinkedIn.png" />
-    <Content Include="images\iconSpeakerRate.png" />
-    <Content Include="images\iconTwitterRed.png" />
-    <Content Include="images\mainpage\icon_CCC.png" />
-    <Content Include="images\mainpage\icon_Map.png" />
-    <Content Include="images\mainpage\icon_Presenter.png" />
-    <Content Include="images\mainpage\icon_Schedule.png" />
-    <Content Include="images\mainpage\icon_Sessions.png" />
-    <Content Include="images\mainpage\icon_Sponsors.png" />
-    <Content Include="images\navbar\header.png" />
-    <Content Include="images\TwitterHome.png" />
-    <Content Include="index.html" />
-    <Content Include="kendo\js\jquery.min.js" />
-    <Content Include="kendo\js\kendo.mobile.min.js" />
-    <Content Include="kendo\styles\images\back.png" />
-    <Content Include="kendo\styles\images\KendoUI.ttf" />
-    <Content Include="kendo\styles\images\KendoUI.woff" />
-    <Content Include="kendo\styles\kendo.mobile.all.min.css" />
-    <Content Include="cordova.ios.js">
-      <Platform>iOS</Platform>
-      <TargetName>cordova.js</TargetName>
-    </Content>
-    <Content Include="cordova.android.js">
-      <Platform>Android</Platform>
-      <TargetName>cordova.js</TargetName>
-    </Content>
-    <Content Include="scripts\appCode.js" />
-    <Content Include="scripts\Events.js" />
-    <Content Include="scripts\knockout.js" />
-    <Content Include="scripts\Presenter.js" />
-    <Content Include="scripts\Presenters.js" />
-    <Content Include="scripts\Schedules.js" />
-    <Content Include="scripts\Session.js" />
-    <Content Include="scripts\Sessions.js" />
-    <Content Include="scripts\Sponsors.js" />
-    <Content Include="styles\appStyle.css" />
-    <Content Include="styles\Profile.css" />
-    <Content Include="styles\Schedule.css" />
-    <Content Include="styles\Sessions.css" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
